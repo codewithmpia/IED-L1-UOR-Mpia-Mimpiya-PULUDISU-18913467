@@ -1,0 +1,18 @@
+[
+    {
+        "title": "La sortie de Ubuntu 24.04 LTS",
+        "author": "Mpia M.",
+        "resume": "La communauté Ubuntu attendait avec impatience la sortie de la nouvelle version LTS (Long Term Support) d'Ubuntu, et le moment est enfin arrivé. Ubuntu 24.04 LTS, nom de code Azure Beaver, est désormais disponible et promet d'apporter une série d'améliorations et de nouvelles fonctionnalités qui séduiront aussi bien les utilisateurs particuliers que les entreprises.",
+        "content": "L'interface utilisateur a été repensée pour être encore plus intuitive et accessible. Avec GNOME 44, Ubuntu 24.04 présente un design modernisé qui rend l'expérience utilisateur plus agréable. De nouvelles fonctionnalités d'accessibilité, telles que des outils de narration améliorés et des options de personnalisation de l'affichage, permettent à un plus large éventail d'utilisateurs de profiter pleinement de leur environnement de travail.",
+        "image": "ubuntu.png",
+        "published": 1
+    },
+    {
+        "title": "Coder vos sites web avec Flask",
+        "author": "Mpia M.",
+        "resume": "Flask est un microframework Python populaire, idéal pour développer des APIs rapidement et efficacement. Il est léger, flexible, et offre une grande liberté aux développeurs pour organiser leur code selon leurs besoins.",
+        "content": "Nous aborderons également l'utilisation des extensions pour ajouter des fonctionnalités comme la gestion de bases de données et l'authentification. En suivant ces étapes, vous pourrez développer des APIs performantes et facilement déployables.",
+        "image": "flask.png",
+        "published": 1
+    }
+]

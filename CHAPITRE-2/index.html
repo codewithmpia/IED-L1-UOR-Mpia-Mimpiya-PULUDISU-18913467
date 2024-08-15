@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <!-- Les méta pour améliorer le referencement -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="author" content="codewthmpia">
+  <meta name="description" content="Découvrez des astuces et conseils pratiques pour améliorer vos compétences en développement. 
+  Restez informé sur les dernières tendances et technologies en matière de développement web et logiciel.">
+  <meta name="keywords" content="web, programmation, python, flask, django, html, css, javascript, sql, tailwindcss, git, linux, adminstration, système">
+  <meta name="robots" content="index, follow">
+  <title>Tous les articles | codewithmpia</title>
+  <!-- Les icons -->
+  <link rel="icon" sizes="512x512" href="./asssets/images/favicon/android-chrome-512x512.png">
+  <link rel="icon" sizes="192x192" href="./asssets/images/favicon/android-chrome-192x192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./asssets/images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./asssets/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./asssets/images/favicon/favicon-16x16.png">
+  <link rel="icon" href="./asssets/images/favicon/favicon.ico">
+</head>
+  <body>
+    <!--Mon logo -->
+    <header id="header">
+      <a href="./index.html" class="logo">
+        <img src="./asssets/images/Logo.png" alt="Mon Logo">
+      </a>
+    </header>
+
+    <!-- BLOC MAIN -->
+    <main id="main">
+      <!-- CONTENU META -->
+      <section id="head">
+        <div class="head-content">
+          <div class="photo">
+              <img src="./asssets/images/photo.png" alt="Ma photo">
+          </div>
+          <div>
+              <div class="head-h">
+                <h2>Mpia M.</h2>
+                <a href="https://github.com/codewithmpia" target="_blank" class="github-link">
+                  <span>Github</span>
+                  <img src="./asssets/images/external-link.svg" alt="Logo lien extérieur">
+                </a>
+              </div>
+              <p class="description">
+                Passionné par les nouvelles technologies et la programmation, je partage ici mes 
+                découvertes et astuces pour les développeurs.
+              </p>
+              <!-- réseaux sociaux -->
+              <div class="socials">
+                <a href="https://github.com/codewithmpia" target="_blank">
+                  <img src="./asssets/images/github.svg" alt="Logo Github">
+                </a>
+                <a href="https://discord.gg/d3qQBAWQ" target="_blank">
+                  <img src="./asssets/images/discord.svg" alt="Logo Dicord">
+                </a>
+                <a href="#" target="_blank">
+                  <img src="./asssets/images/twitter.png" alt="Logo Twitter">
+                </a>
+                <a href="#" target="_blank">
+                  <img src="./asssets/images/youtube.png" alt="Logo Youtube">
+                </a>
+                <a href="#" target="_blank">
+                  <img src="./asssets/images/facebook.svg" alt="Logo Facebook">
+                </a>
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTENU PRINCIPAL -->
+      <section id="contents">
+        <div class="container">
+          <div class="search-bar">
+              <div class="search-desc">
+                  <h3>Publications</h3>
+                  <span>2 publications</span>
+              </div>
+              <!-- La barre de recherche -->
+              <form action="./index.html" method="get">
+                  <input type="search" name="search" id="search" class="form-control" placeholder="taper votre recherche ici...">
+              </form>
+          </div>
+          <!-- 
+            Liste des articles ici
+            L'objectif est que l'on puisse récupérer ces articles depuis la base de données
+          -->
+          <div class="posts">
+            <!-- Article 1-->
+            <a href="./detail.html" class="post">
+              <div class="post-head">
+                <div class="post-meta">
+                  <span>ADMIN</span>
+                  <span>22.07.2024</span>
+                </div>
+                <h3>Coder vos Apis avec Flask</h3>
+              </div>
+              <div>
+                Apprenez à créer et déployer vos APIs efficacement avec Flask, 
+                un microframework léger et puissant en Python, idéal pour le développement 
+                rapide pour applications web.
+              </div>
+            </a>
+            <!-- Article 2-->
+            <a href="./detail.html" class="post">
+              <div class="post-head">
+                <div class="post-meta">
+                  <span>ADMIN</span>
+                  <span>24.04.2024</span>
+                </div>
+                <h3>La sortie de Ubuntu 2024.04 LTS</h3>
+              </div>
+              <div>
+                La nouvelle version Ubuntu 2024.04 LTS marque une étape importante en offrant 
+                des améliorations de performances, une sécurité renforcée, et des fonctionnalités 
+                innovantes pour les utilisateurs professionnels et particuliers.
+              </div>
+            </a>
+            <!-- Article n -->
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+
+{% from "macro.html" import render_messages %}
+
+{% block title %}
+    Tous les articles | codewithmpia
+{% endblock %}
+
+{% block styles %}
+    <!-- On charge les styles dédiés à cette page -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+{% endblock %}
+
+
+{% block head %}
+    <!-- Section entête de la page -->
+    <section id="head">
+        <div class="head-content">
+            <!-- Section de la photo du créateur -->
+            <div class="photo">
+                <img src="{{ url_for('static', filename='images/photo.png') }}" alt="Ma photo">
+            </div>
+            <!-- Section introduction du créateur -->
+            <div>
+                <div class="head-h">
+                    <!-- Nom du créateur -->
+                    <h2>Mpia M.</h2>
+                    <!-- Lien vers le profil Github du créateur -->
+                    <a href="https://github.com/codewithmpia" target="_blank" class="github-link">
+                        <span>Github</span>
+                        <!-- Icone Github -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" 
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" 
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6"/>
+                            <path d="m21 3-9 9"/>
+                            <path d="M15 3h6v6"/>
+                        </svg>
+                    </a>
+                </div>
+                <!-- Description du créateur -->
+                <p class="description">
+                    Passionné par les nouvelles technologies et la programmation, je partage ici mes 
+                    découvertes et astuces pour les développeurs.
+                </p>
+                <!-- Section des liens de réseaux sociaux -->
+                <div class="socials">
+                    <!-- Lien vers le profil Github -->
+                    <a href="https://github.com/codewithmpia" target="_blank" rel="">
+                        <img src="{{ url_for('static', filename='images/github.svg') }}" alt="Logo Github">
+                    </a>
+                    <!-- Lien vers le serveur Discord -->
+                    <a href="https://discord.gg/d3qQBAWQ" target="_blank">
+                        <img src="{{ url_for('static', filename='images/discord.svg') }}" alt="Logo Discord">
+                    </a>
+                    <!-- Lien vers le profil Twitter -->
+                    <a href="https://twitter.com/codewithmpia" target="_blank">
+                        <img src="{{ url_for('static', filename='images/twitter.png') }}" alt="Logo Twitter">
+                    </a>
+                    <!-- Lien vers le compte YouTube -->
+                    <a href="https://www.youtube.com/channel/UC3lL8_6gQeXQZfSJ5QZ_3_w" target="_blank">
+                        <img src="{{ url_for('static', filename='images/youtube.png') }}" alt="Logo YouTube">
+                    </a>
+                    <!-- Lien vers le profil Facebook -->
+                    <a href="https://www.facebook.com/codewithmpia" target="_blank">
+                        <img src="{{ url_for('static', filename='images/facebook.svg') }}" alt="Logo Facebook">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+
+{% block main %}
+    <!-- Section principale de la page -->
+    <section id="contents">
+        <div class="container">
+            <!-- Barre de recherche -->
+            <div class="search-bar">
+                <div class="search-desc">
+                    <h3>Publications</h3>
+                    <!-- Nombre de publications -->
+                    <span>{{ posts|length }} publication{{ posts|pluralize }}</span>
+                </div>
+                <!-- Formulaire de recherche -->
+                <form action="{{ url_for('index') }}" method="get">
+                    {{ form.search(class="form-control") }}
+                </form>
+            </div>
+
+            <!-- Affichage des messages de la session -->
+            {{ render_messages(dismissible=true) }}
+
+            <!-- Section des publications -->
+            <div class="posts">
+                <!-- Boucle sur chaque publication -->
+                {% for post in posts %}
+                    <!-- Lien vers la page de détails de la publication -->
+                    <a href="{{ url_for('detail', id=post.id) }}" class="post">
+                        <div class="post-head">
+                            <div class="post-meta">
+                                <!-- Auteur de la publication -->
+                                <span>{{ post.author }}</span>
+                                <!-- Date de création de la publication -->
+                                <span>{{ post.created_at.strftime("%d.%m.%Y") }}</span>
+                            </div>
+                            <!-- Titre de la publication -->
+                            <h3>{{ post["title"]|truncate(28) }}</h3>
+                        </div>
+                        <!-- Résumé de la publication -->
+                        <div>{{ post.resume|safe|truncate(130) }}</div>
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}
+

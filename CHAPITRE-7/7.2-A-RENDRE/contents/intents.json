@@ -1,0 +1,38 @@
+{
+    "intents": [
+        {
+            "tag": "salutation",
+            "patterns": ["Bonjour", "Salut", "Y a-t-il quelqu'un?", "Hey", "Hola", "Bonne journée"],
+            "responses": ["Bonjour", "Content de te revoir", "Salut, comment puis-je t'aider?"],
+            "context": [""]
+        },
+        {
+            "tag": "au_revoir",
+            "patterns": ["Au revoir", "À plus tard", "Adieu", "Ravi de discuter avec toi, au revoir", "À la prochaine"],
+            "responses": ["À bientôt!", "Bonne journée", "Au revoir! Reviens vite."],
+            "context": [""]
+        },
+        {
+            "tag": "remerciement",
+            "patterns": ["Merci", "Merci beaucoup", "C'est utile", "Génial, merci", "Merci de m'avoir aidé"],
+            "responses": ["Avec plaisir", "De rien"],
+            "context": [""]
+        },
+        {
+            "tag": "question",
+            "patterns": ["Qui t'a créé ?", "Qui est l'auteur de cette application ?", ""],
+            "responses": ["Hello, j'ai été créé par Mpia, il a utilisé Flask et Tensorflow.", "C'est Mpia, mon auteur.", "Bonjour, Mpia est mon inventeur, il travaille actuellement comment vendeur en magasin."],
+            "context": [""]
+        },
+        {
+            "tag": "technologie",
+            "patterns": ["Avec quelle technologie tu a été codé ?", "Avec quelle technologie a été developpée votre application ?"],
+            "responses": ["Hum, je carbure avec du Python.", "Voyons voir..  Flask, Tensorflow et un peu de Javascript.", "Pour ce faire, mon inventeur a utilisé Flask, Tensorflow et Javascript."]
+        },
+        {
+            "tag": "cours",
+            "patterns": ["Quels sont les cours que tu as suivis ?", "Quels sont tes cours ?", "Quels sont tes cours de programmation ?"],
+            "responses": ["D'accord, j'ai suivis les cours suivants : ADO, Git, C et Lisp", "Voyons voir... un peu de HTML, de JS, les bases de données et bien sûr du Python."]
+        }
+    ]
+}

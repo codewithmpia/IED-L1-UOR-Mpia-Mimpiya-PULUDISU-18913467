@@ -1,0 +1,97 @@
+.photo {
+  min-width: 175px;
+  height: 150px;
+  background-color: var(--color4);
+  margin: O;
+  padding: 0;
+  border-radius: var(--rounded);
+  
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--rounded);
+
+}
+
+.github-link {
+  display: flex;
+  align-items: center;
+  gap: var(--gap);
+  text-decoration: none;
+  color: var(--color4);
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.github-link:hover {
+text-decoration: underline;
+}
+
+.description {
+  margin: var(--gap-md) 0;
+  font-size: 18px;
+}
+
+.socials {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: var(--gap-lg);
+}
+
+.socials img {
+  width: 25px;
+}
+
+.search-desc {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--gap-lg);
+
+}
+
+.posts {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--gap-lg);
+  margin: 48px 0;
+}
+
+.post {
+  width: 100%;
+  background-color: var(--color2);
+  color: #AFC2D4;
+  text-decoration: none;
+  border: none;
+  outline: 1px solid transparent;
+  padding: var(--gap-lg);
+  border-radius: var(--rounded);
+}
+
+.post:hover {
+  outline-color: var(--color4);
+}
+
+.post-head {
+  margin-bottom: var(--gap-md);
+}
+
+.head-h {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.post-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  text-transform: uppercase;
+  margin-bottom: var(--gap-md);
+}
+

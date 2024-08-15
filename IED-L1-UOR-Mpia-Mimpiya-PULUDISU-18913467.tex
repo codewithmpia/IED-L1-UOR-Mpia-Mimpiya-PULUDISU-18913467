@@ -1,0 +1,1618 @@
+% ********************************** %
+% UNIVERSITE PARIS 8
+% INSTITUT D'ENSEIGNEMENT À DISTANCE
+% L1 LICENCE INFORMATIQUE 
+% 2023 - 2024
+     
+% INFORMATIQUE FONDAMENTALE (Partie 2 - UOR) %
+
+% NOM: PULUDISU Mpia Mimpiya
+% Numéro étudiant: 18913467
+% ********************************** %
+
+% Initialisation du document de type "article"
+% format A4 et des marges de 1.8 cm sur chaque côté.
+\documentclass[a4paper,11pt]{article}
+\usepackage[a4paper, margin=1.8cm]{geometry}
+% Encodage de caractère
+\usepackage[T1]{fontenc} 
+% Définit l'encodage UTF-8
+\usepackage[utf8]{inputenc}
+% Permet la gestion des particularités linguistiques 
+% propres à la langue française
+\usepackage[french]{babel}
+% Pour la gestion de couleurs
+\usepackage{xcolor}
+% Permet la personalisation de la table de matières
+\usepackage{tocloft} 
+% sert à personnaliser les listes
+\usepackage{enumitem} 
+% Pour gérer les liens hypertextes et urls
+\usepackage{hyperref} 
+% Pour les fonctionnalités mathématiques
+\usepackage{amsmath} 
+% Ajoute les polices mathématiques
+\usepackage{amsfonts} 
+% Gère les images
+\usepackage{graphicx} 
+ % Pour gérer les citations et les guillemets
+\usepackage[style=english]{csquotes}
+% Permet la gestion de tableaux extensibles
+\usepackage{tabularx} 
+% Pour fusionner les cellules sur plusieurs lignes dans un tableau
+\usepackage{multirow} 
+
+\usepackage{listings}
+
+\usepackage{upquote}
+
+\usepackage{tcolorbox}
+
+\usepackage{verbatim}
+
+
+% Indique l'auteur du document
+\author{Mpia Mimpiya PULUDISU\\Noméro étudiant: 18913467\\L1 Informatique}
+
+% Indique le titre du document
+\title{\LARGE{INFORMATIQUE FONDAMENTALE \\ (Partie 2 - UOR)}}
+
+% Je défini la date au 15 décembre 2020 comme demandé dans le devoir
+% On peut également mettre la date de la dernière compilation : \date{\today}
+\date{\today}
+
+% Personalisation de la table de matières
+% change la couleur de texte de sections et sous-sections en bleu et 
+% met les sections en gras
+\renewcommand{\cftsecfont}{\color{blue}\normalfont}
+\renewcommand{\cftsubsecfont}{\color{blue}\normalfont}
+\renewcommand{\cftsecfont}{\bfseries}
+
+% définit la couleur urls et liens hypertextes en bleu
+\hypersetup{colorlinks=true,linkcolor=blue,urlcolor=blue}
+
+% Définition de la configuration de base pour le langage Python
+\lstset{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue}\bfseries,
+    commentstyle=\color{gray},
+    stringstyle=\color{red},
+    numbers=none,
+    numberstyle=\tiny\color{gray},
+    stepnumber=1,
+    numbersep=10pt,
+    backgroundcolor=\color{gray!2},
+    tabsize=4,
+    captionpos=b,
+    breaklines=true,
+    breakatwhitespace=false,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    frame=single,
+    framesep=10pt,
+    framerule=0.1pt,
+    aboveskip=10pt,
+    belowskip=10pt,
+    inputencoding=utf8,
+    extendedchars=true,
+    literate=%
+        {é}{{\'e}}1
+        {è}{{\`e}}1
+        {à}{{\`a}}1
+        {ç}{{\c{c}}}1
+        {ê}{{\^e}}1
+        {ë}{{\"e}}1
+        {â}{{\^a}}1
+        {î}{{\^i}}1
+        {ï}{{\"i}}1
+}
+
+% Ajout de la prise en charge de CSS
+\lstdefinelanguage{CSS}{
+    keywords={color, background, background-color, border, margin, padding, font-size, font-family},
+    sensitive=true,
+    morecomment=[l]{//},
+    morecomment=[s]{/*}{*/},
+    morestring=[b]",
+}
+
+% Ajout de la prise en charge de HTML
+\lstdefinelanguage{HTML}{
+    language=html,
+    sensitive=true,
+    alsoletter={<>=-},
+    morecomment=[s]{<!--}{-->},
+    morestring=[b]",
+    morekeywords={
+      >, <, </, !, DOCTYPE, html, head, meta, link, script, body, div,
+      h1, p, table, thead, tbody, tr, th, td, button, span, h1, h2, h3, h4,
+      h5, h6, ul, ol, li, a, img, form, input, label, select, option, textarea,
+      option, select
+    }
+}
+
+% Ajout de la prise en charge de JavaScript
+\lstdefinelanguage{JavaScript}{
+    keywords={function, var, let, const, if, else, for, while, do, return, break, continue, switch, case, default, throw, try, catch, finally, new, this, typeof, instanceof, in, with, void, delete},
+    sensitive=true,
+    morecomment=[l]{//},
+    morecomment=[s]{/*}{*/},
+    morestring=[b]",
+}
+
+% Configuration pour Python (peut être redéfinie individuellement pour chaque langage si besoin)
+\lstset{
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue}\bfseries,
+    commentstyle=\color{gray},
+    stringstyle=\color{red},
+    backgroundcolor=\color{gray!2},
+    frame=single,
+    framesep=10pt,
+    framerule=0.1pt,
+    aboveskip=10pt,
+    belowskip=10pt,
+    tabsize=4,
+    breaklines=true,
+    breakatwhitespace=false,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+}
+
+
+\tcbuselibrary{listingsutf8}
+
+
+\begin{document}
+    % Affiche le titre, l'auteur et la date
+    \maketitle
+
+    % Table de matières
+    \tableofcontents
+
+    % Force le contenu qui suit à se mettre dans une nouvelle page
+    \newpage
+
+    
+    % CHAPITRE 1
+    \newpage
+    \section{CHAPITRE 1}
+        \noindent \textit{Pour ce chapitre, pas d’exercice à réaliser, si ce n’est de :
+            \begin{itemize}
+                \item Trouver un hébergeur(gratuit si possible) afin de pouvoir réaliser en ligne les exercices des chapitres suivants.
+                \item Vérifiez que celui-ci vous permette d’accéder à PHP, à au moins
+                une base MySQL (ou équiv) et à son administration (PhpMyAdmin
+                ou équiv), ainsi qu’au protocole FTP.
+                \item Si c’est le cas, inscrivez-vous gratuitement à celui-ci et notez
+                l’URL de votre "première" page dans le PDF.
+            \end{itemize}
+        }
+
+        \noindent Je profite de ce cours pour réaliser mon blog personnel qui me 
+        permettra de partager ma passion pour l'informatique. 
+        Alors, ce blog  contiendra deux pages : 
+        
+        \begin{enumerate}
+            \item la page index contenant tous les articles du blog
+            \item la page detail contenant le detail de l'article concerné. 
+        \end{enumerate}
+
+        \bigskip
+        \noindent Ce site sera plublié sur pythonanywhere: \url{https://codewithmpia.pythonanywhere.com/}
+        
+        \bigskip
+        \noindent Il sera aussi consultable sur GitHub: \url{https://github.com/codewithmpia/codewithmpia-blog}
+        
+        \bigskip
+        \noindent J'ai choisi de réaliser la quasi totalité des exercices en local en utlisant majoritairement Python avec le framework Flask. 
+        Un des project développé à travers ce cours (mon blog personnel) sera publié sur  pythonanywhere car ma connaissance c'est la seule
+        plateforme proposant un hébergement gratuit pour les applications Python et 
+        permettant également un accés à MySqL et à git.  
+
+        \bigskip
+        \begin{tcolorbox}[colback=lightgray!6, colframe=black, left=1mm, right=2mm, top=2mm, bottom=1mm, boxrule=0.1mm]
+            Pour conclure, voici les liens (urls) à retenir: 
+            
+            \begin{enumerate}
+                \item Mon blog personnel: \url{https://codewithmpia.pythonanywhere.com/}
+                \item Le code-source de mon blog personnel sur Github:\\ \url{https://github.com/codewithmpia/codewithmpia-blog}
+                \item Enfin, les codes et sources de tous les 7 chapitres sont disponibles sur Github ainsi que l'archive:\\ 
+                \url{https://github.com/codewithmpia/IED-L1-UOR-RENDU-Mpia-Mimpiya-PULUDISU-18913467}
+            \end{enumerate}
+        \end{tcolorbox}
+
+    % CHAPITRE 2
+    \newpage
+    \section{CHAPITRE 2}
+        \noindent \textit{Pour ce Chapitre 2, il est demanandé de réaliser une page HTML.}
+
+        \bigskip
+        \noindent Je propose ici deux pages:
+            \begin{enumerate}
+                \item la page index (index.html): regroupant tous les articles du blog.
+                \item la page detail (detail.html): contenant le detail de l'article correspondant.
+            \end{enumerate}
+        
+        \bigskip
+        \noindent Voici les codes de ces deux pages: 
+
+        \begin{enumerate}
+            \item \textbf{Pour la page index (index.html)}:
+                \lstinputlisting{CHAPITRE-2/index.html}
+            \item   \textbf{Pour la page detail (detail.html)}:
+                \lstinputlisting{CHAPITRE-2/detail.html}
+        \end{enumerate}
+
+        \newpage
+        \noindent Voici les captures de validation de ces deux pages sur W3C validator: 
+
+        \begin{figure}[ht]
+            \makebox[\textwidth][l]{
+                \hspace{0.4cm}
+                \includegraphics[width=0.9\textwidth]{CHAPITRE-2/validator_index.png}
+            }
+        \end{figure}
+
+        \begin{figure}[ht]
+            \makebox[\textwidth][l]{
+                \hspace{0.4cm}
+                \includegraphics[width=0.9\textwidth]{CHAPITRE-2/vaidator_detail.png}
+            }
+        \end{figure}
+
+        \bigskip
+        \begin{tcolorbox}[colback=lightgray!6, colframe=black, left=5mm, right=5mm, top=2mm, bottom=2mm, boxrule=0.1mm]
+            En bref, nous avons créé pour ce chaptre deux pages index.html et detail.html
+            pour notre blog et nous avons également valider ces deux pages sur W3C validator.
+        \end{tcolorbox}
+
+    % CHAPITRE 3
+    \newpage
+    \section{CHAPITRE 3}
+        \noindent \textit{Dupliquez la page web personnelle que vous avez construite
+        au chapitre précédent et insérez dans cette dernière les CSSv3 en
+        vous attachant à utiliser les balises float, clear, span et div.}
+        
+        \bigskip
+        \noindent Voici les styles des deux pages (index.html et detail.html),
+        pour de raisons de lisibilité et de performance, j'ai divisé en 4 petites 
+        feuilles de styles.
+        \begin{enumerate}
+            \item base.css: pour le style commun à toutes les deux pages;
+            \item index.css: pour le style de la page index;
+            \item detail.css: pour le style de la page detail;
+            \item media.css: pour la gestion de la responsivité.
+        \end{enumerate}
+
+        \begin{itemize}
+            \item \textbf{base.css}:
+                \lstinputlisting{CHAPITRE-3/asssets/css/base.css}
+            \item \textbf{index.css}:
+                \lstinputlisting{CHAPITRE-3/asssets/css/index.css}
+            \item \textbf{detail.css}:
+                \lstinputlisting{CHAPITRE-3/asssets/css/detail.css}
+            \item \textbf{media.css}: 
+                \lstinputlisting{CHAPITRE-3/asssets/css/media.css}
+        \end{itemize}
+        
+        \noindent Avec le style, la ou les pages ressemble(ent) à: 
+        
+        \begin{itemize}
+            \item Pour la page index:
+                \begin{figure}[ht]
+                    \makebox[\textwidth][l]{
+                        \hspace{0.4cm}
+                        \includegraphics[width=0.6\textwidth]{CHAPITRE-3/captures/capture1.png}
+                    }
+                \end{figure}
+            
+            \newpage
+            \item Pour la page detail:
+                \begin{figure}[ht]
+                    \makebox[\textwidth][l]{
+                        \hspace{0.4cm}
+                        \includegraphics[width=0.5\textwidth]{CHAPITRE-3/captures/capture2.png}
+                    }
+                \end{figure}
+            
+            \newpage
+            \item Pour les petits écrans:
+                \begin{figure}[ht]
+                    \makebox[\textwidth][l]{
+                        \hspace{0.4cm}
+                        \includegraphics[width=0.4\textwidth]{CHAPITRE-3/captures/capture3.png}
+                    }
+                \end{figure}
+        \end{itemize}
+
+        \bigskip
+        \begin{tcolorbox}[colback=lightgray!6, colframe=black, left=5mm, right=5mm, top=2mm, bottom=2mm, boxrule=0.1mm]
+            En resumé, nous avons ajouter les styles aux 2 pages (index.html et detail.html) créées 
+            dans le chapitre précédent.
+        \end{tcolorbox}
+
+    % CHAPITRE 4
+    \newpage
+    \section{CHAPITRE 4}
+        \noindent \textit{L’exercice pour ce chapitre consiste à transférer un fichier à l’aide de Netcat et à installer une application Web, en local ou chez votre hébergeur
+        selon.}
+
+        \subsection{Exercice 4.1 (A rendre)}
+            \noindent \textit{En utilisant deux ordinateurs connectés sur le réseau..., à l’aide
+            d’une VM, ou en local, sur la même machine, avec deux fenêtres de
+            Terminal ouvertes :
+                \begin{itemize}
+                    \item Recopiez un gros fichier entre deux machines (ou entre deux
+                    terminaux) en utilisant netcat.
+                \end{itemize}
+            }
+
+            \noindent Netcat, souvent abrégé en nc, est un outil réseau polyvalent utilisé pour établir des connexions TCP/IP et UDP. 
+            Il est souvent qualifié de "couteau suisse" du réseau en raison de sa capacité à effectuer une variété de tâches, allant 
+            du simple transfert de fichiers à la création de serveurs de test ou à l'exécution de diagnostics réseau. 
+            Voici un résumé de ses fonctionnalités et utilisations principales :
+
+            \begin{enumerate}
+                \item \underline{Transfert de fichiers}:  Netcat peut être utilisé pour envoyer et recevoir des 
+                    fichiers entre ordinateurs sur un réseau. C'est l'une des utilisations les plus 
+                    courantes pour les administrateurs système.
+
+                \item \underline{Écoute de Ports}: Netcat peut écouter sur un port spécifique pour recevoir des connexions entrantes, agissant ainsi comme un serveur. 
+                    Cela peut être utile pour tester des applications clientes.
+
+                    \begin{tcolorbox}[colback=lightgray!6, colframe=black, left=5mm, right=5mm, top=2mm, bottom=2mm, boxrule=0.1mm]
+                        Netcat est un outil puissant et flexible pour le dépannage réseau, le transfert de fichiers et d'autres tâches réseau. 
+                        Sa simplicité et sa flexibilité en font un outil précieux pour les administrateurs système et les professionnels de la sécurité, 
+                        mais il doit être utilisé avec précaution pour éviter les risques de sécurité.
+                    \end{tcolorbox}
+
+                \item \underline{Établissement de Connexions}: Il peut également initier des connexions vers des serveurs pour envoyer des données 
+                ou effectuer des tests de connectivité.
+
+                \item  \underline{Exécution de Commandes à Distance}: En combinaison avec des scripts shell, Netcat peut exécuter des commandes à distance, 
+                permettant des interactions shell basiques sur le réseau.
+            \end{enumerate}
+
+            \bigskip
+            \noindent Pour répondre à la question de recopier un gros entre deux terminaux en utlisant 
+            netcat. Je veux recopier l'image d'installation de Ubuntu 24.04 LTS se trouvant dans le dossier 
+            /home/mp/Bureau/INFO/CHAPITRE-4/doc4a vers /home/mp/Bureau/INFO/CHAPITRE-4/doc4b.
+
+            \bigskip
+            \noindent Ce fichier, l'image d'installation de Ubuntu 24.04 LTS fait à peu près dans le 6 gibaytes.
+            
+            \bigskip
+            \noindent Pour réaliser cette tâche, nous allons avoir besoin de 2 terminaux (l'un jouera le rôle de l'expéditeur et l'autre du récepteur).
+
+            \begin{itemize}
+                \bigskip
+                \item \underline{Côté récepteur}: 
+                    \begin{tcolorbox}[colback=lightgray!6, colframe=black, left=5mm, right=5mm, top=2mm, bottom=2mm, boxrule=0.1mm]
+                        nc -l -p 1995 > ubuntu-24.04-desktop-amd64.iso
+                    \end{tcolorbox}
+
+                    \noindent Explication:
+                    \begin{itemize}
+                        \item nc : Abréviation de Netcat, c'est l'outil qui permet d'établir des connexions réseau et d'envoyer ou recevoir des données.
+                        \item -l: Cette option indique que Netcat doit fonctionner en mode "écoute" (listen). 
+                        \item -p: Spécifie le port sur lequel Netcat doit écouter les connexions entrantes. Dans cet exemple, il écoute sur le port 1995.
+                        \item > ubuntu-24.04-desktop-amd64.iso:  Redirige les données reçues via la connexion réseau vers le fichier nommé ubuntu-24.04-desktop-amd64.iso. 
+                        Tout ce qui est envoyé à l'écouteur Netcat sera écrit dans ce fichier.
+                    \end{itemize}
+                
+                \bigskip
+                \item \underline{Côte d'expéditeur}:
+                    \begin{tcolorbox}[colback=lightgray!6, colframe=black, left=5mm, right=5mm, top=2mm, bottom=2mm, boxrule=0.1mm]
+                        nc -q 1 localhost 1995 < ubuntu-24.04-desktop-amd64.iso
+                    \end{tcolorbox}
+                    
+                    \noindent \underline{Explication}:
+                    \begin{itemize}
+                        \item -q 1: Cette option permet à Netcat de définir un délai d'attente avant de fermer la connexion une fois que l'entrée standard (le fichier dans ce cas) a été complètement envoyée.
+                        \item localhost:  fait référence à l'adresse IP 127.0.0.1, qui est une adresse de loopback signifiant "cette machine". L'utilisation de localhost indique que la connexion est effectuée sur la même machine.
+                        \item 1995:C'est le numéro de port que Netcat utilise pour établir la connexion. Le port est un point de terminaison d'une connexion réseau. Dans cet exemple, Netcat envoie les données au port 1995 sur la machine locale.
+                        \item < ubuntu-24.04-desktop-amd64.iso: : Cette partie utilise la redirection d'entrée du shell pour prendre le contenu du fichier ubuntu-24.04-desktop-amd64.iso et l'envoyer à travers la connexion réseau établie par Netcat.
+                    \end{itemize}
+            \end{itemize}
+
+            \bigskip
+            \noindent Les captures d'écran montrant toutes les commandes utilisée pour réaliser cette opération:
+            \begin{itemize}
+                \item Terminal Récepteur:
+                    \begin{figure}[ht]
+                        \makebox[\textwidth][l]{
+                            \hspace{0.4cm}
+                            \includegraphics[width=0.6\textwidth]{CHAPITRE-4/4.1-A-RENDRE/reception.png}
+                        }
+                    \end{figure}
+                \item Terminal Expéditeur:
+                    \begin{figure}[ht]
+                        \makebox[\textwidth][l]{
+                            \hspace{0.4cm}
+                            \includegraphics[width=0.6\textwidth]{CHAPITRE-4/4.1-A-RENDRE/envoi.png}
+                        }
+                    \end{figure}
+            \end{itemize}
+
+            \noindent Ma connexion est rapide, j'utilise la fibre optique. Cette recopie de l'image de l'installation de Ubuntu 24.04 LTS de près de 6 gigabytes s'est effectuée presque instantanément (environ 56 secondes).
+            
+            \newpage
+            \noindent Voici les captures de test de debit de ma connexion internet:
+
+            \begin{figure}[ht]
+                \makebox[\textwidth][l]{
+                    \hspace{0.4cm}
+                    \includegraphics[width=0.6\textwidth]{CHAPITRE-4/4.1-A-RENDRE/test-connection1.png}
+                }
+            \end{figure}
+
+            \begin{figure}[ht]
+                \makebox[\textwidth][l]{
+                    \hspace{0.4cm}
+                    \includegraphics[width=0.6\textwidth]{CHAPITRE-4/4.1-A-RENDRE/test-connection2.png}
+                }
+            \end{figure}
+        
+            \begin{tcolorbox}[colback=lightgray!6, colframe=black, left=5mm, right=5mm, top=2mm, bottom=2mm, boxrule=0.1mm]
+                Netcat est un outil essentiel pour quiconque travaille avec des réseaux, offrant une solution simple et efficace pour de nombreuses tâches réseau. 
+            \end{tcolorbox}
+
+            \newpage
+            \subsection{Exercice 4.2 (A Rendre)}
+                \noindent \textit{Sur votre ordinateur en local (sur lequel vous aurez installé
+                XAMPP), en virtualisation (VirtualBox, VMWare, Docker,...) ou
+                chez votre hébergeur gratuit (selon) :
+                \begin{itemize}
+                    \item Installez une Application Web de votre choix (CMS, LMS, Wiki,....) et 
+                        compléter une page à minima avec des contenus relatifs à la thématique choisie (cf chapitre 2).
+                    \item Expliquez et Illustrez chacune des phases de l’installation  l’aide de commentaires et de copies d'écran (C.E(s)).
+                \end{itemize}}
+
+                \bigskip
+                \noindent Nous allons installer une application web sur notre ordinateur en local en utlisant XAMPP. 
+                Voici les étapes:
+                \begin{enumerate}
+                    \item \textbf{Installation de XAMPP}:
+                        \begin{itemize}
+                            \item \underline{Installer XAMPP}:
+                                \begin{itemize}
+                                    \item Allez sur le site officiel de XAMPP: \url{https://www.apachefriends.org/index.html}
+                                    \item Télécharger la version appropriée pour votre système d'exploitation. 
+                                \end{itemize}
+                            \item \underline{Installer XAMPP}:
+                                \begin{itemize}
+                                    \item Exécuter le fichier télécharger et suivre les instructions.
+                                    \item Choisir les composants que vous souhaitez installer (Apache, MySQL, PHP, etc...).
+                                \end{itemize}
+                            \item \underline{Démarger XAMPP}:
+                                \begin{itemize}
+                                    \item Ouvrez le panneau de contrôle XAMPP et démarrez les servies Apache et MySQL.
+                                \end{itemize}
+                        \end{itemize}
+
+                    \item \textbf{Télécharger et installer WordPress}:\\
+                        \noindent L'installation de WordPress exige que PHP, MySQL soient installés sur l'ordinateur, ça tombe bien, tous ces pacquets 
+                        sont inclus dans XAMPP. Voici donc, les étapes à suivre: 
+                        \begin{itemize}
+                            \item \underline{Télécharger WordPress}:
+                                \begin{itemize}
+                                    \item Allez sur le site officiel de WordPress: \url{https://wordpress.org/download/}
+                                    \item Télécharger la dernière version de WordPress.
+                                \end{itemize}
+                            \item \underline{Décompresser WordPress}:
+                                \begin{itemize}
+                                    \item Décompresser l'archive téléchargée dans le repertoire \textbf{htdocs} de XAMPP.
+                                \end{itemize}
+                            \item \underline{Créer une base de données MySQL}:
+                                \begin{itemize}
+                                    \item Ouvrez votre navigateur et allez à \url{http://localhost/phpmyadmin}.
+                                    \item Créez une nouvelle base de données pour WordPress que je choisi de nommer wordpress.
+                                \end{itemize}
+                        \end{itemize}
+
+                    \item \textbf{Configurer WordPress}:
+                        \begin{itemize}
+                            
+                                \item \underline{Accéder à l'installation de WordPress}:
+                                    \begin{itemize}
+                                        \item Ouvrez votre navigateur et allez à \url{http://localhost/wordpress}.
+                                        \item Séléctionner la langue et cliquez sur "Continuer".
+                                    \end{itemize}
+                                \item \underline{Configurer la base de données}
+                                    \begin{itemize}
+                                        \item Entrez les informations de la base de données que vous avez créée (nom de la base de données, nom d'utilisateur, mot de passe, hôte de la base de données).
+                                        \item Cliquez sur "Envoyer".
+                                    \end{itemize}
+                                \item \underline{Lancer l'installation}:
+                                    \begin{itemize}
+                                        \item Cliquez sur "Lancer l'installation".
+                                    \end{itemize}
+                                \item \underline{Configurer le site}:
+                                    \begin{itemize}
+                                        \item Entrez le titre du site, le nom d'utilisateur, le mot de passe, et l'adresse e-mail.
+                                        \item Cliquez sur "Installer WordPress".
+                                    \end{itemize}
+                                \item \underline{Se connecter à WordPress}
+                                    \begin{itemize}
+                                        \item Connectez-vous à votre tableau de bord WordPress avec les informations que vous avez configurées.
+                                    \end{itemize}
+                            
+                        \end{itemize}
+                    
+                    \newpage
+                    \item \textbf{Compléter une page avec du contenu}:
+                        \begin{itemize}
+                            \item \underline{Créer une nouvelle page}:
+                                \begin{itemize}
+                                    \item Dans le tableau de bord WordPress, allez à "Pages" > "Ajouter".
+                                \end{itemize}
+                            \item \underline{Ajouter du contenu}:
+                                \begin{itemize}
+                                    \item Ajoutez un titre et du contenu à votre page.
+                                    \item Publiez la page.
+                                \end{itemize}
+                            \item \underline{Vérifier la page publiée}:
+                                \begin{itemize}
+                                    \item Allez à l'URL de votre page pour vérifier que le contenu a été publié correctement.
+                                \end{itemize}
+                        \end{itemize}
+                \end{enumerate}
+
+                \noindent Voici quelques captures d'écran: 
+
+                \includegraphics[width=0.5\textwidth]{CHAPITRE-4/4.2-A-RENDRE/screen1.png}
+                \includegraphics[width=0.5\textwidth]{CHAPITRE-4/4.2-A-RENDRE/screen2.png}
+                \includegraphics[width=0.5\textwidth]{CHAPITRE-4/4.2-A-RENDRE/screen3.png}
+                \includegraphics[width=0.5\textwidth]{CHAPITRE-4/4.2-A-RENDRE/screen4.png}
+
+                \bigskip
+                \begin{tcolorbox}[colback=lightgray!6, colframe=black, left=5mm, right=5mm, top=2mm, bottom=2mm, boxrule=0.1mm]
+                    Nous avons installé WordPress sur notre ordinateur local en utilisant XAMPP et créé une page avec du contenu. Ce guide nous a montré chaque étape de l'installation avec des captures d'écran pour illustrer le processus. 
+                    Nous pouvons maintenant personnaliser notre site WordPress selon nos besoins.
+                \end{tcolorbox}
+            
+            \newpage
+            \subsection{Exercice 4.3 (Bonus)}
+                \noindent \textit{A réaliser en local sur votre machine, avec XAMPP, Python,
+                NodeJS,... (selon) installé.s ou à l’aide d’une image docker (cf
+                QR-codes pour aller plus loin) :
+                    \begin{itemize}
+                        \item Installez (une application au choix) : Apache Nifi, Elas-
+                        ticSearch(*)(+ kibana), une base NoSQL (MongoDB, Redis,
+                        Neo4j,Cassandra, CouchDB, etc.), un forum de discussion (Dis-
+                        course, Talkyard, NodeBB (si NodeJS), PhpBB, etc.), un serveur de
+                        jeux, un serveur de Chat (ou IRC),un full-stack MERN ou MEAN,
+                        Streamlit (Python),... ou encore une seconde application web prise
+                        dans la liste de Bitnami en plus de celle de l’exercice 4.1.
+                        \item N’oubliez pas d’ajouter un contenu minimal et d’illustrer votre
+                        PDF avec les C.E(s) des différentes phrases d’installation et du rendu
+                        final.
+                    \end{itemize}
+                }
+
+            \bigskip
+            \noindent Pour réaliser cette tâche, j'utilise une image Docker et installe ElasticSearch et Kibana.
+
+            \bigskip
+            \noindent Elasticsearch est un moteur de recherche et d'analyse distribué basé sur Apache Lucene. 
+            Il est conçu pour être évolutif, rapide et capable de gérer de grandes quantités de données en temps réel. 
+            Elasticsearch est souvent utilisé pour des applications de recherche, de logging, de monitoring et d'analyse de données. 
+            
+            \bigskip
+            \noindent Kibana est une plateforme de visualisation et d'exploration de données open-source développée par Elastic. 
+            Elle est conçue pour fonctionner en tandem avec Elasticsearch, le moteur de recherche et d'analyse distribué. 
+            Kibana permet aux utilisateurs de visualiser les données stockées dans Elasticsearch de manière intuitive et interactive.
+
+            \bigskip
+            \begin{enumerate}
+                \item \textbf{Prérequis} (Docker et docker-compose):\\
+                \noindent Commençons par installer Docker et docker-compose, sur Ubuntu cela se fait via la commande:
+                \begin{tcolorbox}[colback=lightgray!6, colframe=black, left=-30mm, right=5mm, top=2mm, bottom=-2mm, boxrule=0.1mm]
+                    \begin{verbatim}
+                        sudo apt install docker docker-compose
+                    \end{verbatim}
+                \end{tcolorbox}
+                
+                \item \textbf{Étapes d'installation}: 
+                \noindent Créons un fichier \textit{docker-compose.yml} contenant les informations suivantes:
+                \lstinputlisting{CHAPITRE-4/4.3-BONUS/docker-compose.yml}
+                \noindent Ce fichier (docker-compose.yml) est utilisé pour définir et gérer des applications multi-conteneurs avec Docker Compose. 
+                Docker Compose est un outil qui permet de définir et de lancer des applications Docker composées de plusieurs conteneurs. 
+                Le fichier docker-compose.yml spécifie les services, les réseaux et les volumes nécessaires pour l'application, ainsi que les configurations spécifiques pour chaque service.
+
+                \item \textbf{Lancer les conteneurs}:\\
+                    \noindent Notre fichier \textit{docker-compose.yml} ayant été défini, nous pouvons entrer la commande suivante pour lancer les conteneurs:
+                    \begin{tcolorbox}[colback=lightgray!6, colframe=black, left=-30mm, right=5mm, top=2mm, bottom=-2mm, boxrule=0.1mm]
+                        \begin{verbatim}
+                            docker-compose up -d
+                        \end{verbatim}
+                    \end{tcolorbox}
+                    \noindent Cette commande est utilisée pour démarrer et exécuter les services définis dans le fichier docker-compose.yml en mode détaché (en arrière-plan).\\
+                    \noindent On peut d'ailleur vérifier la bonne installation de ces conteneurs en utlisant la commande: 
+                    \begin{tcolorbox}[colback=lightgray!6, colframe=black, left=-30mm, right=5mm, top=2mm, bottom=-2mm, boxrule=0.1mm]
+                        \begin{verbatim}
+                            docker images
+                        \end{verbatim}
+                    \end{tcolorbox}
+                    \includegraphics[width=0.8\textwidth]{CHAPITRE-4/4.3-BONUS/screenshots/screen1.png}
+
+                    \noindent Et pour voir si tous les services sont bien exécutés (ElasticSearch et Kibana):
+                    \begin{tcolorbox}[colback=lightgray!6, colframe=black, left=-30mm, right=5mm, top=2mm, bottom=-2mm, boxrule=0.1mm]
+                        \begin{verbatim}
+                            docker ps
+                        \end{verbatim}
+                    \end{tcolorbox}
+                    \includegraphics[width=0.8\textwidth]{CHAPITRE-4/4.3-BONUS/screenshots/screen2.png}
+
+                \item \textbf{Vérifier l'installation}:
+                    \begin{itemize}
+                        \item \underline{ElasticSearch}:  Accédez à \url{http://localhost:9200} pour vérifier que ElasticSearch est en cours d'exécution.\\
+                            \bigskip
+                            \includegraphics[width=0.8\textwidth]{CHAPITRE-4/4.3-BONUS/screenshots/screen3.png}
+                        \item \underline{Kibana}:  Accédez à \url{http://localhost:5601} pour vérifier que Kibana est en cours d'exécution.\\
+                            \bigskip
+                            \includegraphics[width=0.8\textwidth]{CHAPITRE-4/4.3-BONUS/screenshots/screen4.png}
+                    \end{itemize}
+                \item \textbf{Ajouter un contenu minimal}: \\
+                    \noindent J'utlise ici \textit{curl} pour indexer des données dans ElasticSearch:
+                    \begin{tcolorbox}[colback=lightgray!6, colframe=black, left=-50mm, right=5mm, top=2mm, bottom=-2mm, boxrule=0.1mm]
+                        \begin{verbatim}
+                            curl -XPUT 'http://localhost:9200/rendu?pretty' -H 
+                            'Content-Type: application/json' -d'
+                            {
+                                "title": "La sortie de Ubuntu 24.04 LTS",   
+                                "content": "La communauté Ubuntu attendait avec impatience la sortie de la 
+                                nouvelle version LTS (Long Term Support) d'Ubuntu, et le moment est enfin 
+                                arrivé. Ubuntu 24.04 LTS, nom de code "Azure Beaver," 
+                                est désormais disponible et promet d'apporter une série d'améliorations et 
+                                de nouvelles fonctionnalités 
+                                qui séduiront aussi bien les utilisateurs particuliers que les 
+                                entreprises."
+                                "views": 5,
+                                "image": "ubuntu.png",
+                                "published": 1
+                            }'
+                        \end{verbatim}
+                    \end{tcolorbox}
+            \end{enumerate}
+            
+            \begin{tcolorbox}[colback=lightgray!6, colframe=black, left=5mm, right=5mm, top=2mm, bottom=2mm, boxrule=0.1mm]
+                Cet exercice a permis de découvrir et de mettre en pratique l'utilisation de Docker Compose pour gérer des applications multi-conteneurs. En utilisant un fichier docker-compose.yml, nous avons pu définir et configurer plusieurs services, tels qu'Elasticsearch et Kibana, de manière simple et efficace.
+                
+                \bigskip
+                Le fichier docker-compose.yml a été utilisé pour spécifier les images Docker, les ports, les volumes et les variables d'environnement nécessaires pour chaque service. La commande docker-compose up -d a permis de démarrer ces services en mode détaché, ce qui signifie qu'ils s'exécutent en arrière-plan, libérant ainsi la ligne de commande pour d'autres tâches.
+
+                \bigskip
+                L'exercice a également montré comment indexer des données dans Elasticsearch et les visualiser dans Kibana, démontrant ainsi l'intégration fluide entre ces deux outils. Les captures d'écran prises à chaque étape ont illustré le processus d'installation et de configuration, ainsi que le rendu final des applications en cours d'exécution.
+
+                \bigskip
+                En résumé, cet exercice a mis en lumière la puissance et la flexibilité de Docker Compose pour gérer des applications complexes. Il a également souligné l'importance de l'intégration entre différents outils, comme Elasticsearch et Kibana, pour des tâches de recherche et de visualisation de données. Cette expérience pratique est précieuse pour comprendre comment déployer et gérer des applications multi-conteneurs dans un environnement de développement ou de production.
+            \end{tcolorbox}
+            
+
+        \newpage
+        \section{CHAPITRE 5}
+            \subsection{Exercice 5.1 (A Rendre)} 
+                \label{blog}
+                \noindent \textit{Ajoutez à votre page personnelle un formulaire comportant
+                à minima 5 champs différents, Traitez-le avec du PHP (ou avec le
+                langage de votre choix) en utilisant obligatoirement une base de
+                données relationnelle (MySQL ou équivalent).
+                \begin{itemize}
+                    \item Pour que ce soit intéressant, il faut que la page écrive des don-
+                        nées dans la base mais aussi qu’elle les relise pour affichage. Un
+                        exemple simple est un livre d’or, une demande de contacts, un ’lais-
+                        sez votre avis’, ..., qui permettra de laisser données et informations
+                        sur la page et bien évidemment d’afficher celles-ci pour validation.
+                    \item Pour vous aider, vous pouvez utiliser un outil d’administration
+                        comme PhpMyAdmin (ou équiv.). Pensez à rendre le plus sûr pos-
+                        sible les saisies de l’utilisateur notammment sur les champs "date"
+                        et "adresse email" qui devront apparaître dans votre formulaire.
+                    \item N’oubliez pas d’expliquer les requêtes utilisées (SQL ou équiv),
+                    les traitements opérés, de réaliser les C.E(s) d’installation et d’illus-
+                    tration du fonctionnement de votre forumulaire et de joindre toutes
+                    les sources à votre dossier Htdocs en archive attachée à votre envoi.
+                \end{itemize}
+                }
+
+                \bigskip
+                \noindent Pour répondre à cette question, j'ai réécrit tout le blog avec le framework Flask et utlisé la base de données MySQL.
+
+                \noindent Voici le retour de la commande \textit{tree} indiquant la structure de notre application:\\
+                \includegraphics[width=0.5\textwidth]{CHAPITRE-5/5.1-A-RENDRE/screenshots/screen1.png}
+
+                \newpage
+                \noindent Avant de se lancer, voici les modules nécessaires au bon fonctionnement de notre application: 
+                \lstinputlisting{CHAPITRE-5/5.1-A-RENDRE/requirements.txt}
+
+                \noindent Pour installer tous ces modules, merci suivre les étapes suivantes:
+                \begin{tcolorbox}[colback=lightgray!6, colframe=black, left=-30mm, right=5mm, top=2mm, bottom=-2mm, boxrule=0.1mm]
+                    \begin{verbatim}
+                        # creation de l'environnement virtuel
+                        python -m venv venv ou python3 -m venv venv
+
+                        # activation de l'environnement virtuel
+                        source venv/bin/activate
+
+                        # insllation de modules
+                        pip install -r requirements.txt ou pip3 install -r requirements.txt
+                    \end{verbatim}
+                \end{tcolorbox}
+
+                \noindent Une fois, la configuration de l'environnement virtuel est terminée, le but étant de connecter notre application à MySQL et d'effectuer quelques requêtes. J'utlise le module python 
+                \textit{mysql-connector-python} pour intéragir avec la base de données (MySQL). 
+                
+                \bigskip
+                \noindent Voici la description des fichiers de notre application (je ne mettrai l'accent ici que sur la logique serveur, le HTML et le CSS étant déjà expliqué dans les chapitres précédents):
+                
+                \begin{enumerate}
+                    \item \textbf{settings.py}:
+                        \lstinputlisting{CHAPITRE-5/5.1-A-RENDRE/contents/settings.py}
+                        
+                        \noindent Ce code initialise une application Flask avec des configurations spécifiques pour la sécurité, la minification des fichiers, 
+                        des filtres personnalisés pour les templates, des gestionnaires d'erreurs et des routes pour les vues. Les configurations et les ressources 
+                        sont récupérées depuis des variables d'environnement et des modules locaux, offrant une structure modulaire et configurable.
+
+                    \item \textbf{errors.py}:
+                        \lstinputlisting{CHAPITRE-5/5.1-A-RENDRE/contents/errors.py}
+                        \noindent Ce code traite les erreurs et affiche des messages d'erreur appropriés.
+                    
+                    \item \textbf{utils.py}: 
+                        \lstinputlisting{CHAPITRE-5/5.1-A-RENDRE/contents/utils.py}
+                        \noindent Ce code contient variables et fonctions utiles pour l'application.
+
+                    \item \textbf{db.py}: 
+                        \lstinputlisting{CHAPITRE-5/5.1-A-RENDRE/contents/db.py}
+                        \noindent Ce code Python est conçu pour interagir avec une base de données MySQL en utilisant le module mysql.connector. 
+                        Il comprend deux fonctions principales : get\_db\_connection et create\_tables.
+                        
+                        \begin{itemize}
+                            \item \underline{La fonction get\_db\_connection()}: \\
+                            \noindent Elle  tente de se connecter à une base de données MySQL en utilisant les informations de connexion récupérées via get\_env\_vars.\\
+                            Si la connexion échoue, une exception est levée.
+
+                            \item \underline{La fonction create\_tables()}:\\
+                            \noindent Cette fonction crée deux tables dans la base de données : posts et comments.
+                        \end{itemize}
+
+                    \item \textbf{forms.py}:
+                        \lstinputlisting{CHAPITRE-5/5.1-A-RENDRE/contents/forms.py}
+                        \noindent Définit deux formulaires (SearchForm et CommentForm):
+                        \begin{itemize}
+                            \item \underline{SearchForm}:  Un formulaire de recherche avec un champ de recherche et un placeholder.
+                            \item \underline{CommentForm}: Un formulaire de commentaire avec des champs pour le nom de l'auteur, l'adresse e-mail, 
+                            le message et un bouton de soumission. Chaque champ est validé pour s'assurer qu'il n'est pas vide et que les adresses e-mail sont valides, avec des messages d'erreur personnalisés.
+                            \noindent Il est important de signaler que la validation de l'adresse mail est faite grâce au module python email-validator quel on peut retrouver dans le fichier requirements.txt.
+                        \end{itemize}
+                    \item \textbf{views.py}:
+                        \lstinputlisting{CHAPITRE-5/5.1-A-RENDRE/contents/views.py}
+
+                        \noindent Ce code définit deux vues (IndexView et PostDetailView).
+                        \begin{itemize}
+                            \item \underline{IndexView}:  gère l'affichage des articles et la recherche.
+                            \item \underline{PostDetailView}: gère l'affichage d'un article, l'affichage et soumission de commentaires.
+                        \end{itemize}
+
+                    \item \textbf{run\_app.py}:
+                        \lstinputlisting{CHAPITRE-5/5.1-A-RENDRE/run_app.py}
+                        \noindent Comme indique son nom, ce module permet de lancer l'application.
+                \end{enumerate}
+
+                \noindent Regardons aussi, le dossier templates (un template est un fichier HTML + logique Python. 
+                Dans notre cas, c'est le moteur de template Jinja2 qu'est utilisé.) Ce dossier situé dans \textit{/contents/assets/templates} contient 
+                les fichiers HTML suivants: index.html, detail.html, base.html, macro.html, 404.html, 500.html. 
+
+                \bigskip
+                \noindent Pour ne pas surcharger le PDF, j'ai choisis de n'insérer dans ce document que le code HTML de index.html, detail.html et base.html.
+                Le code des autres fichiersHTML reprend le même principe et sont fournis dans le dossier \textit{/contents/assets/templates}.
+
+                \begin{enumerate}
+                    \item \textbf{base.html}:
+                        \lstinputlisting{CHAPITRE-5/5.1-A-RENDRE/contents/assets/templates/base.html}
+                        \noindent Défint le squelette HTML de notre application. J'ai pris soins de mettre les métadonnées 
+                        pour faciliter la référencement.
+
+                    \item \textbf{index.html}:
+                        \lstinputlisting{CHAPITRE-5/5.1-A-RENDRE/contents/assets/templates/index.html}
+
+                        \noindent Ce template Jinja2 étend le template base.html, importe une macro pour afficher des messages, et 
+                        définit plusieurs blocs pour personnaliser le titre, les styles, l'en-tête et le contenu principal de la page. 
+                        L'en-tête de la page contient des informations sur le créateur, des liens vers les réseaux sociaux, et une photo. 
+                        Le contenu principal de la page inclut une barre de recherche, des messages de la session, et une liste de publications avec des liens vers les pages de détails. 
+                        Les styles spécifiques à cette page sont également chargés.
+                    
+                    \item \textbf{detail.html}:
+                        \lstinputlisting{CHAPITRE-5/5.1-A-RENDRE/contents/assets/templates/detail.html}
+                        \noindent Ce template Jinja2 represente le détail de chaque article. Je me concentre ici 
+                        que sur la partie commentaire qui est composé de deux parties:
+
+                        \begin{itemize}
+                            \item \underline{Le formulaire de soumission de commentaires.}: Qui contient des champs pour le nom, l'adresse e-mail, le message et un bouton de soumission.
+                                \begin{tcolorbox}[colback=lightgray!6, colframe=black, left=-70mm, right=5mm, top=2mm, bottom=0mm, boxrule=0.1mm]
+                                    \begin{verbatim}
+                                        <form class="comment-form" action="{{ url_for('detail', id=post.id) }}" 
+                                            method="post">
+                                            {{ form.csrf_token() }}
+                                            <div class="form-row">
+                                            <div class="form-group">
+                                                {{ form.author.label(class="form-label") }}
+                                                {{ form.author(class="form-control") }}
+                                            </div>
+                                            <div class="form-group">
+                                                {{ form.email.label(class="form-label") }}
+                                                {{ form.email(class="form-control") }}
+                                            </div>
+                                            </div>
+                                            <div class="form-group">
+                                            {{ form.message.label(class="form-label") }}
+                                            {{ form.message(class="form-control h-180") }}
+                                            </div>
+                                            {{ form.submit(class="btn") }}
+                                        </form>
+                                    \end{verbatim}
+                                \end{tcolorbox}
+
+                                \noindent Comme la validation de tous ces champs est faite avec python, et dans notre cas ce sont les modules Flask-WTF et email-validator qui s'en occupent.
+
+                            \item \underline{Liste de commentaires}: 
+                                \begin{tcolorbox}[colback=lightgray!6, colframe=black, left=-78mm, right=5mm, top=2mm, bottom=0mm, boxrule=0.1mm]
+                                    \begin{verbatim}
+                                        <div class="comments">
+                                            {% for comment in comments %}
+                                                <div class="comment">
+                                                    <div class="comment-head">
+                                                    <img src="{{ url_for('static', filename='images/person.png') }}" 
+                                                    alt="Avatar user">
+                                                    <div class="comment-meta">
+                                                        <h4>{{ comment.author }}</h4>
+                                                        <span>, le {{ comment.created_at.strftime("%d.%m.%Y") }}
+                                                        </span>
+                                                    </div>
+                                                    </div>
+                                                    <div class="comment-body">{{ comment.message|safe }}</div>
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+                                    \end{verbatim}
+                                \end{tcolorbox}
+                                \noindent On parcourt la liste de commentaires liés à chaque article, et on traite aussi l'affichage de la 
+                                date de la summission d'un commentaire, via la ligne: 
+                                \begin{tcolorbox}[colback=lightgray!6, colframe=black, left=-78mm, right=5mm, top=2mm, bottom=0mm, boxrule=0.1mm]
+                                    \begin{verbatim}
+                                        <span>, le {{ comment.created_at.strftime("%d.%m.%Y") }}</span>
+                                    \end{verbatim}
+                                \end{tcolorbox}
+
+                                \noindent C'est ce qui permet ensuite d'avoir la date sous ce format:  le 13.08.2024 par exemple. 
+                        \end{itemize}    
+                \end{enumerate}
+
+                \newpage
+                \noindent Voici quelques captures d'écran:\\
+                \includegraphics[width=0.5\textwidth]{CHAPITRE-5/5.1-A-RENDRE/screenshots/screen2.png}
+                \includegraphics[width=0.5\textwidth]{CHAPITRE-5/5.1-A-RENDRE/screenshots/screen3.png}
+                \includegraphics[width=0.5\textwidth]{CHAPITRE-5/5.1-A-RENDRE/screenshots/screen4.png}
+                \includegraphics[width=0.5\textwidth]{CHAPITRE-5/5.1-A-RENDRE/screenshots/screen5.png}
+                \includegraphics[width=0.5\textwidth]{CHAPITRE-5/5.1-A-RENDRE/screenshots/screen6.png}
+            
+                \begin{tcolorbox}[colback=lightgray!6, colframe=black, left=2mm, right=5mm, top=2mm, bottom=2mm, boxrule=0.1mm]
+                    
+                    En quelques mots, dans cet exercice nous avons connecté notre application à la base de donnée MySQL gràce au module \textit{mysql-connector-python}.\\
+                    Les articles et commentaires viennent de tables \textit{posts} et \textit{comments}.\\
+                    Nous avons également traité la soumission de donnée via un formulaire de commentaire qui a été généré grâce au module \textit{Flask-WTF}, ce module associé au module \textit{email-validator}, 
+                    nous a permis de valider tous les champs de notre formulaire de commentaire et ainsi personnaliser les messages d'erreurs pouvant se produire.
+                \end{tcolorbox}
+
+            \newpage
+            \subsection{Exercice 5.2 (Bonus)}
+                \noindent \textit{Réalisez le même formulaire, traité avec le langage de votre
+                choix, et cette fois à l’aide d’une base NoSQL.
+                \begin{itemize}
+                    \item N’oubliez pas d’expliquer et d’illustrer comme dans l’exercice
+                    5.1.
+                \end{itemize}
+                }
+
+                \bigskip
+                \noindent Pour bien répondre à cet exercice, j'ai créé une petite application de 
+                prise de rendez-vous avec Flask et MongoDB.
+
+                \noindent Voici les modules utilisés pour réaliser cet exercice: 
+                \lstinputlisting{CHAPITRE-5/5.2-BONUS/requirements.txt}
+
+                \noindent Créons un environnement virtuel et installons les modules:
+
+                \begin{tcolorbox}[colback=lightgray!6, colframe=black, left=-30mm, right=5mm, top=2mm, bottom=-2mm, boxrule=0.1mm]
+                    \begin{verbatim}
+                        # creation de l'environnement virtuel
+                        python -m venv venv ou python3 -m venv venv
+
+                        # activation de l'environnement virtuel
+                        source venv/bin/activate
+
+                        # insllation de modules
+                        pip install -r requirements.txt ou pip3 install -r requirements.txt
+                    \end{verbatim}
+                \end{tcolorbox}
+
+                \noindent Voici le retour de la commande \textit{tree} indiquant la structure de notre application:\\
+                \includegraphics[width=0.5\textwidth]{CHAPITRE-5/5.2-BONUS/screenshots/arbre.png}
+
+                \noindent Décrivons chacun de ces fichiers:
+
+                \begin{enumerate}
+                    \item \textbf{main.py}:
+                        \lstinputlisting{CHAPITRE-5/5.2-BONUS/main.py}
+                        \noindent Ce code crée une application Flask avec un formulaire de contact qui utilise MongoDB comme base de données NoSQL. 
+                        Le formulaire permet aux utilisateurs de soumettre des messages, et les soumissions sont enregistrées dans la base de données. 
+                        Les messages soumis sont affichés sur la page d'accueil, triés par date en ordre décroissant.
+                    \item  \textbf{index.html}:
+                        \lstinputlisting{CHAPITRE-5/5.2-BONUS/templates/index.html}
+
+                        \noindent Ce template HTML est utilisé pour afficher un formulaire de contact et une liste des contacts soumis. 
+                        Il utilise des styles personnalisés et des classes CSS pour structurer et styliser la page. Les messages flash sont affichés 
+                        pour informer l'utilisateur des actions effectuées, et les contacts sont affichés dans une grille pour une meilleure lisibilité.
+                \end{enumerate}
+
+                \noindent Pour lancer notre aplication, il suffit de faire: 
+
+                \begin{tcolorbox}[colback=lightgray!6, colframe=black, left=-30mm, right=5mm, top=2mm, bottom=2mm, boxrule=0.1mm]
+                    \begin{verbatim}
+                        # Il est préferrable d'utiliser l'environnement virtuel
+                        python main.py ou python3 main.py
+                    \end{verbatim}
+                \end{tcolorbox}
+
+                \noindent Voici quelques captures d'écran illustrant notre petite application de
+                prise de rendez-vous:
+
+                \includegraphics[width=0.9\textwidth]{CHAPITRE-5/5.2-BONUS/screenshots/screen1.png}\\
+                \includegraphics[width=0.9\textwidth]{CHAPITRE-5/5.2-BONUS/screenshots/screen2.png}\\
+                \includegraphics[width=0.9\textwidth]{CHAPITRE-5/5.2-BONUS/screenshots/screen3.png}\\
+
+                \begin{tcolorbox}[colback=lightgray!6, colframe=black, left=2mm, right=5mm, top=2mm, bottom=2mm, boxrule=0.1mm]
+                    Dans cet exercice, nous avons réalisé une application web complète utilisant Flask, un framework Python pour le développement web, 
+                    et MongoDB, une base de données NoSQL. L'objectif était de créer un formulaire de contact permettant aux utilisateurs de soumettre des messages, 
+                    et d'afficher ces messages sur la même page.
+                \end{tcolorbox}
+    % CHAPITRE 6
+    \newpage
+    \section{CHAPITRE 6}
+        \subsection{Exercice 6.1 (A Rendre)}
+            \noindent \textit{Réalisez une copie de votre page initiale (comporant les CSS)
+            et ajoutez à celle-ci du JavaScript afin d’obtenir, en utilisant le DOM,
+            une page qui réagit aux actions de l’utilisateur.}
+            
+            \bigskip
+            \noindent Pour répondre à cet exercice, j'ai créé un nouvelle page regroupant 
+            une liste de formations.\\ Toutes les sources sont dans le dossiers assets, les fichiers index.html, les fichiers de styles et les images.\\
+            J'ai fait le choix de ne pas mettre le html, et css ici pour ne pas trop surcharger le PDF mais 
+            ils sont bien sûr dans le code source.
+
+            \bigskip
+            \noindent Voici le code JavaScript permettant la gestion de toutes les intéractions de la page:
+            la barre de navigation, le dropdown (filtres par catégorie) et la gestion des alertes. 
+            
+            \lstinputlisting{CHAPITRE-6/6.1-A-RENDRE/assets/js/main.js}
+
+            \noindent Ce code est divisé en 3 parties :
+
+            \begin{enumerate}
+                \item \textbf{Navigation} (const navigation): \\
+                   
+                    \noindent Cet objet encapsule toutes les fonctionnalités nécessaires pour la gestion de la barre de navigation.
+
+                    \begin{enumerate}
+                        \item \underline{Propriété (elements)}: \\
+                            Permet la sélection des élements suivants dans le DOM soit par leurs classes soit par tag html:
+                            \begin{itemize}
+                                \item tabletProfileOpenIcon
+                                \item tabletProfileData
+                                \item tabletProfileCloseIcon
+                                \item mobileMenuOpenIcon
+                                \item mobileMenu
+                                \item mobileMenuCloseIcon
+                            \end{itemize}
+
+                        \item \underline{Méthodes}: \\
+                            Permet de définir les actions sur les éléments de la page.
+                            \begin{itemize}
+                                \item toggleClass:  Ajoute ou retire une classe CSS d'un élément selon la valeur de \underline{add}
+                                \item toggleTabletProfile:  bascule l'affichage du profil sur tablette. Elle ajoute ou retire les classes 
+                                open et no-scroll aux éléments appropriés. Si add est false, elle retire également l'écouteur d'événements click qui ferme le profil lorsqu'on clique en dehors.
+                                \item closeOutsideTabletProfile: ferme le profil tablette si l'utilisateur clique en dehors de l'élément du profil. Elle vérifie que le clic n'a pas eu lieu à l'intérieur du profil ou 
+                                sur l'icône d'ouverture du profil.
+                                \item toggleMobileMenu: bascule l'affichage du menu mobile. Elle ajoute ou retire les classes open et no-scroll2 aux éléments appropriés. Si add est false, elle ferme également le profil tablette.
+                                \item init: initialise les écouteurs d'événements pour les différentes icônes et éléments. Elle appelle les fonctions appropriées pour ouvrir ou fermer le profil tablette et le menu mobile lorsque les icônes correspondantes sont cliquées. Elle ajoute également un écouteur d'événements global pour fermer le profil tablette lorsqu'on clique en dehors.
+                            \end{itemize}
+                    \end{enumerate}
+
+                    \noindent Enfin, navigation.init() est appelé pour initialiser la navigation lorsque le script est exécuté.
+                
+                    \begin{tcolorbox}[colback=lightgray!6, colframe=black, left=5mm, right=5mm, top=2mm, bottom=2mm, boxrule=0.1mm]
+                        En résumé, cet objet navigation gère l'ouverture et la fermeture des profils et menus sur différents appareils, en ajoutant ou retirant des classes CSS et en gérant les événements de clic.
+                    \end{tcolorbox}
+
+                \bigskip
+                \item \textbf{Messages d'alertes} (const messages): \\
+                
+                    \noindent Ce code définit un objet messages qui gère les messages d'alerte sur une page web. Voici une explication détaillée de chaque partie du code :
+                        \begin{enumerate}
+                            \item \underline{Propriété (elements)}: \\
+                                \noindent Cette section définit un objet messages avec une propriété elements qui contient des références à différents éléments du DOM. \newline Les éléments sont sélectionnés à l'aide de document.querySelectorAll avec des sélecteurs CSS spécifiques :
+                                \begin{itemize}
+                                    \item alerts:  Sélectionne tous les éléments avec la classe .alert
+                                    \item alertCloseIcons: Sélectionne tous les éléments avec la classe .alert-close-icon
+                                \end{itemize}
+                            \item \underline{Méthode: closeAlert}:
+                                \begin{itemize}
+                                    \item La fonction closeAlert utilise la méthode forEach pour parcourir chaque élément d'alerte.
+                                    \item Pour chaque alerte, un écouteur d'événements click est ajouté à l'icône de fermeture correspondante.
+                                    \item Lorsque l'icône de fermeture est cliquée, l'alerte est masquée en définissant son style display à none.
+                                \end{itemize}
+                        \end{enumerate}
+                    
+                    \noindent Enfin, messages.init() est appelé pour initialiser les messages lorsque le script est exécuté.*
+
+                    \begin{tcolorbox}[colback=lightgray!6, colframe=black, left=5mm, right=5mm, top=2mm, bottom=2mm, boxrule=0.1mm]
+                        En résumé, ce code permet de fermer les alertes en cliquant sur leurs icônes de fermeture, en les masquant simplement 
+                        au lieu de les supprimer du DOM.
+                    \end{tcolorbox}
+
+                \bigskip
+                \item \textbf{Filtres par catégorie} (const categoriesFilters): \\
+                    
+                \noindent Ce code JavaScript définit un objet categoriesFilters qui gère les filtres par catégorie pour une liste de formations. Voici une explication détaillée en français :
+                    \begin{enumerate} 
+                        \item \textbf{\textit{Propriété (elements)}}: \\ 
+                            \noindent Un objet contenant des références aux éléments DOM utilisés pour les filtres par catégorie.
+                            \begin{itemize}
+                                \item categoriesBtn : Le bouton pour ouvrir/fermer la liste des catégories.
+                                \item categoriesList : La liste des catégories.
+                                \item categoriesItems : Les éléments de la liste des catégories.
+                                \item formations : Les éléments de formation.
+                                \item categoriesBtnIcon : L'icône du bouton des catégories.
+                                \item alertElement : L'élément d'alerte pour afficher des messages.
+                            \end{itemize}
+
+                        \item \textbf{\textit{Méthodes}}: 
+                            \begin{itemize}
+                                \item \underline{int()}:  Initialise les écouteurs d'événements et met à jour le nombre de formations par catégorie.
+                                    \begin{itemize}
+                                        \item Ajoute un écouteur d'événements pour le clic sur le bouton des catégories.
+                                        \item Ajoute un écouteur d'événements pour le clic sur chaque élément de la liste des catégories.
+                                        \item Ajoute un écouteur d'événements pour les clics en dehors de la liste des catégories.
+                                    \end{itemize}
+
+                                \item \underline{onDocumentClick()} : Gère les clics en dehors de la liste des catégories pour la fermer.
+                                    \begin{itemize}
+                                        \item Vérifie si le clic est en dehors de la liste des catégories et du bouton des catégories.
+                                        \item Ferme la liste des catégories et fait pivoter l'icône si nécessaire.
+                                    \end{itemize}
+                                \item \underline{updateNumberPerCategory()} : Met à jour le nombre de formations par catégorie.
+                                    \begin{itemize}
+                                        \item Calcule le nombre total de formations.
+                                        \item Met à jour le texte des éléments de nombre par catégorie.
+                                        \item Affiche une alerte si aucune formation n'est disponible.
+                                    \end{itemize}
+                                \item \underline{onCategoryBtnClick()} : Gère le clic sur le bouton des catégories.
+                                    \begin{itemize}
+                                        \item Ouvre ou ferme la liste des catégories.
+                                        \item Fait pivoter l'icône.
+                                    \end{itemize}
+                                \item \underline{onCategoryItemClick()} : Gère le clic sur un élément de la liste des catégories.
+                                    \begin{itemize}
+                                        \item Met à jour le texte du bouton des catégories.
+                                        \item Ferme la liste des catégories. 
+                                        \item Filtre les formations en fonction de la catégorie sélectionnée.
+                                        \item Affiche une alerte si aucune formation n'est disponible dans la catégorie sélectionnée.
+                                    \end{itemize}
+
+                                \item \underline{rotateIcon()} : Fait pivoter l'icône.Ajoute ou retire la classe rotate-180 en fonction de l'état de la liste des catégories.
+                                \item \underline{showAlert()} : Affiche ou masque l'alerte en fonction du nombre total de formations.
+                            \end{itemize}
+
+                            \begin{tcolorbox}[colback=lightgray!6, colframe=black, left=5mm, right=5mm, top=2mm, bottom=2mm, boxrule=0.1mm]
+                                Enfin, categoriesFilters.init() initialise categoriesFilters en appelant la méthode init, ce qui configure les écouteurs d'événements et 
+                                met à jour le nombre de formations par catégorie.
+                            \end{tcolorbox}
+                    \end{enumerate}
+
+                    \begin{tcolorbox}[colback=lightgray!6, colframe=black, left=5mm, right=5mm, top=2mm, bottom=2mm, boxrule=0.1mm]
+                        Ce code permet de gérer les filtres par catégorie pour une liste de formations. Il met à jour le nombre de 
+                        formations par catégorie, gère l'ouverture et la fermeture de la liste des catégories, filtre les formations en 
+                        fonction de la catégorie sélectionnée, et affiche des alertes si aucune formation n'est disponible.
+                    \end{tcolorbox}
+            \end{enumerate}
+
+        \begin{figure}
+            \makebox[\textwidth][l]{
+                \hspace{0.4cm}
+                \includegraphics[width=0.8\textwidth]{CHAPITRE-6/6.1-A-RENDRE/assets/images/screenshots/screen1.png}
+            }
+        \end{figure}
+
+        \begin{figure}
+            \makebox[\textwidth][l]{
+                \hspace{0.4cm}
+                \includegraphics[width=0.8\textwidth]{CHAPITRE-6/6.1-A-RENDRE/assets/images/screenshots/screen2.png}
+            }
+        \end{figure}
+
+        \begin{figure}
+            \makebox[\textwidth][l]{
+                \hspace{0.4cm}
+                \includegraphics[width=0.8\textwidth]{CHAPITRE-6/6.1-A-RENDRE/assets/images/screenshots/screen3.png}
+            }
+        \end{figure}
+
+        \begin{figure}
+            \makebox[\textwidth][l]{
+                \hspace{0.4cm}
+                \includegraphics[width=0.8\textwidth]{CHAPITRE-6/6.1-A-RENDRE/assets/images/screenshots/screen4.png}
+            }
+        \end{figure}
+
+        \begin{figure}
+            \makebox[\textwidth][l]{
+                \hspace{0.4cm}
+                \includegraphics[width=0.8\textwidth]{CHAPITRE-6/6.1-A-RENDRE/assets/images/screenshots/screen5.png}
+            }
+        \end{figure}
+
+        \begin{figure}
+            \makebox[\textwidth][l]{
+                \hspace{0.4cm}
+                \includegraphics[width=0.8\textwidth]{CHAPITRE-6/6.1-A-RENDRE/assets/images/screenshots/screen6.png}
+            }
+        \end{figure}
+
+        \newpage
+        \subsection{Exercice 6.2 (Bonus)}
+            \noindent Dans la page actuelle ou dans une nouvelle page, insérez des
+            données au Format JSON prises dans l’un des jeux de données disponibles dans l’Open-Data.
+
+            \bigskip
+            \noindent Comme les données sont récupérées depuis une machine distante via une API, il faudra une connexion internet pour afficher cette page.
+            
+            \bigskip
+            \noindent Ce petit projet est composé de 3 fichiers : index.html, style.css et script.js.
+
+            \begin{enumerate}
+                \item \textbf{index.html}:
+                    \lstinputlisting{CHAPITRE-6/6.2.BONUS/index.html}
+
+                \newpage
+                \item \textbf{style.css}:
+                    \lstinputlisting{CHAPITRE-6/6.2.BONUS/assets/style.css}
+
+                \newpage
+                \item \textbf{script.js}:
+                    \lstinputlisting{CHAPITRE-6/6.2.BONUS/assets/script.js}
+            \end{enumerate}
+            
+            \bigskip
+            \noindent Voici une capture d'écran qui illustre la page affichichant un table des données récupérées depuis une API:
+            
+            \newpage
+            \begin{figure}
+                \makebox[\textwidth][l]{
+                    \hspace{0.4cm}
+                    \includegraphics[width=0.8\textwidth]{CHAPITRE-6/6.2.BONUS/assets/screenshots/screen.png}
+                }
+            \end{figure}
+
+            \newpage
+            \begin{tcolorbox}[colback=lightgray!6, colframe=black, left=5mm, right=5mm, top=2mm, bottom=2mm, boxrule=0.1mm]
+                L'utilisation de l'API Fetch en JavaScript est une méthode puissante et flexible pour interagir avec des services web et récupérer des données dynamiquement. \\ Dans le code fourni, nous avons utilisé Fetch pour récupérer des données d'un dataset public sur les projets Horizon de l'enseignement supérieur et de la recherche en France.
+
+                \bigskip
+                Le code commence par définir une URL de base pour l'API et des paramètres pour la pagination. Ensuite, il crée des fonctions pour générer des lignes de tableau, afficher les données dans un tableau HTML, et gérer la pagination. 
+                
+                \bigskip
+                La fonction fetchData est responsable de l'appel à l'API et de la mise à jour de l'interface utilisateur avec les nouvelles données.
+                
+                \bigskip
+                Les boutons de navigation "Précédent" et "Suivant" permettent à l'utilisateur de parcourir les pages de données, et leur état (activé ou désactivé) est géré en fonction de la page actuelle.
+                
+                \bigskip
+                En conclusion, l'API Fetch en JavaScript est un outil essentiel pour les développeurs web modernes, permettant de créer des applications dynamiques et interactives en récupérant et en manipulant des données en temps réel. Ce code montre comment utiliser Fetch pour paginer et afficher des données de manière efficace et conviviale sans avoir à utiliser 
+                des modules supplémentaires comme Axios, Redaxios, SuperAgent ou Ky. 
+            \end{tcolorbox}
+
+    \newpage
+    \section{CHAPITRE 7}
+        \subsection{Exercice 7.1 (A rendre)}
+            \noindent Après les avoir compressés en une seule archive, transférez les sources(*) de votre site (répertoire "htdocs" ou Document
+            Root) de votre hébergeur (ou en local dans un autre dossier selon)
+            en utilisant le protocole FTP.
+
+            \begin{itemize}
+                \item En utilisant les commandes netcat, ssh, scp, wget, git,... (selon), déposez votre archive (obtenue en (1)) dans un service d’hébergement gratuit de fichiers de votre choix ou sur un serveur de
+                gestion de versions décentralisé (Github, Gitea, GitLab, BitBucket, SVN, Mercurial, SourceForge, ...)
+
+                \item Comme à l’habituée, n’oubliez pas de commenter les différentes opérations et d’illustrer celles-ci avec des C.E(s). Insérez éga-
+                lement dans votre réponse le ou les liens correspondant.s afin que je puisse accéder à distance à votre archive.
+
+                \item Sources (*) : N’oubliez pas d’ajouter à votre archive, les sources
+                du chatbot de l’exercice 7.2.
+            \end{itemize}
+
+            \bigskip
+            \noindent Ok, 
+
+            \begin{enumerate}
+                \item \textbf{Créer une archive}:
+                    \begin{tcolorbox}[colback=lightgray!6, colframe=black, left=-50mm, right=5mm, top=2mm, bottom=-2mm, boxrule=0.1mm]
+                        \begin{verbatim}
+                            tar -czvf IED-L1-UOR-RENDU-Mpia-Mimpiya-PULUDISU-18913467.tar.gz INFO
+                        \end{verbatim}
+                    \end{tcolorbox}
+
+                    \noindent La commande crée une archive nommée IED-L1-UOR-RENDU-Mpia-Mimpiya-PULUDISU-18913467.tar.gz. Elle compresse cette archive avec gzip.
+                    Elle affiche les fichiers traités pendant la création de l'archive et Elle inclut tous les fichiers et sous-répertoires contenus dans le répertoire INFO dans l'archive.
+                    
+                \item \textbf{Transférez votre archive}:
+                    \begin{itemize}
+                        \item \underline{Transfert de l'archive via FTP en utilisant netcat}:
+                            \noindent J'effectue une copie de l'archive via FTP en utilisant le protocole netcat de \textit{~/Bureau/Transfert/dossierA}
+                            vers le \textit{~/Bureau/Transfert/dossierB}:
+                            \begin{itemize}
+                                \item Réception: 
+                                    \begin{tcolorbox}[colback=lightgray!6, colframe=black, left=-85mm, right=5mm, top=2mm, bottom=-2mm, boxrule=0.1mm]
+                                        \begin{verbatim}
+                                            nc -l -p 1234 > IED-L1-UOR-RENDU-Mpia-Mimpiya-PULUDISU-18913467.tar.gz
+                                        \end{verbatim}
+                                    \end{tcolorbox}
+                                    \includegraphics[width=0.8\textwidth]{CHAPITRE-7/7.1-A-RENDRE/screenshots/screen4.png}
+                                \item Envoi:
+                                    \begin{tcolorbox}[colback=lightgray!6, colframe=black, left=-88mm, right=5mm, top=2mm, bottom=-2mm, boxrule=0.1mm]
+                                        \begin{verbatim}
+                                            nc 127.0.0.1 1234 < IED-L1-UOR-RENDU-Mpia-Mimpiya-PULUDISU-18913467.tar.gz
+                                        \end{verbatim}
+                                    \end{tcolorbox}
+                                    \includegraphics[width=0.8\textwidth]{CHAPITRE-7/7.1-A-RENDRE/screenshots/screen3.png}
+                            \end{itemize}
+
+                        \item \underline{Transfert de l'archive via FTP en utilisant scp}:
+                            \noindent Pour transférer une archive via FTP en utilisant scp (Secure Copy Protocol), nous devons 
+                            d'abord nous assurer que nous vons accès SSH au serveur distant car scp utilise SSH pour transférer des fichiers de manière sécurisée. 
+                            Voici les étapes détaillées pour effectuer ce transfert :
+                            \begin{itemize}
+                                \item Création de l'archive: s'assurer que notre archive est déjà créée. Par exemple, si nous utilisé la commande tar pour créer une archive :
+                                    \begin{tcolorbox}[colback=lightgray!6, colframe=black, left=-85mm, right=5mm, top=2mm, bottom=-2mm, boxrule=0.1mm]
+                                        \begin{verbatim}
+                                            tar -czvf IED-L1-UOR-RENDU-Mpia-Mimpiya-PULUDISU-18913467.tar.gz INFO
+                                        \end{verbatim}
+                                    \end{tcolorbox}
+                                \item Transfert de l'archive via SCP: Utilisons la commande scp pour transférer l'archive vers le serveur distant. La syntaxe est la suivante :
+                                    \begin{tcolorbox}[colback=lightgray!6, colframe=black, left=-80mm, right=5mm, top=2mm, bottom=-2mm, boxrule=0.1mm]
+                                        \begin{verbatim}
+                                            scp IED-L1-UOR-RENDU-Mpia-Mimpiya-PULUDISU-18913467.tar.gz 
+                                            etudiant@127.0.0.1:~/INFO/UOR
+                                        \end{verbatim}
+                                    \end{tcolorbox}
+                                    \includegraphics[width=0.8\textwidth]{CHAPITRE-7/7.1-A-RENDRE/screenshots/screen6.png}\\
+                                    \includegraphics[width=0.8\textwidth]{CHAPITRE-7/7.1-A-RENDRE/screenshots/screen5.png}
+                            \end{itemize}
+                        \item  \underline{Déposer l'archive sur GitHub}: 
+
+                        \begin{itemize}
+                            \item Créer un dépôt GitHub nommé \textit{IED-L1-UOR-RENDU-Mpia-Mimpiya-PULUDISU-18913467}:
+                            \item Cloner le dépôt:
+                                \begin{tcolorbox}[colback=lightgray!6, colframe=black, left=-75mm, right=5mm, top=2mm, bottom=0mm, boxrule=0.1mm]
+                                    \begin{verbatim}
+                                        git clone https://github.com/codewithmpia/IED-L1-UOR-RENDU-Mpia-
+                                        Mimpiya-PULUDISU-18913467
+
+                                        cd IED-L1-UOR-RENDU-Mpia-Mimpiya-PULUDISU-18913467
+                                    \end{verbatim}
+                                \end{tcolorbox}
+                            \item  Ajouter l'archive au dépôt: 
+                                \begin{tcolorbox}[colback=lightgray!6, colframe=black, left=-75mm, right=5mm, top=2mm, bottom=0mm, boxrule=0.1mm]
+                                    \begin{verbatim}
+                                        cp IED-L1-UOR-RENDU-Mpia-Mimpiya-PULUDISU-18913467.tar.gz .
+                                    \end{verbatim}
+                                \end{tcolorbox}
+                            \item Commit et push les modifications:
+                                \begin{tcolorbox}[colback=lightgray!6, colframe=black, left=-75mm, right=5mm, top=2mm, bottom=0mm, boxrule=0.1mm]
+                                    \begin{verbatim}
+                                        git add IED-L1-UOR-RENDU-Mpia-Mimpiya-PULUDISU-18913467.tar.gz
+                                        git commit -m "Ajout de l'archive"
+                                        git push origin main
+                                    \end{verbatim}
+                                \end{tcolorbox}
+                           
+                            \begin{tcolorbox}[colback=lightgray!6, colframe=black, left=2mm, right=5mm, top=2mm, bottom=0mm, boxrule=0.1mm]
+                                En suivant ces étapes, vous avez créé un dépôt sur GitHub, cloné ce dépôt sur votre machine locale, 
+                                ajouté l'archive IED-L1-UOR-RENDU-Mpia-Mimpiya-PULUDISU-18913467.tar.gz, et poussé les modifications vers GitHub. 
+                                Nous pouvons maintenant accéder à l'archive via le lien suivant : \url{https://github.com/codewithmpia/IED-L1-UOR-RENDU-Mpia-Mimpiya-PULUDISU-18913467}
+                            \end{tcolorbox}
+                        \end{itemize}
+                    \end{itemize}
+            \end{enumerate}
+
+
+        \newpage
+        \subsection{Exercice 7.2 (Mini-Projet - à Rendre)}
+            \begin{itemize}
+                \item  Avec le langage et/ou le framework de votre choix, réalisez
+                un mini-chatbot qui puisse dialoguer avec un utilisateur humain.
+
+                \item Ce chatbot doit pouvoir répondre à des "bonjour" ..., "bonsoir" ..., et à un minimum de 5 questions simples de votre choix.
+                
+                \item Si vous le souhaitez, vous pouvez développer votre chatbot en local, chez votre hébergeur, ou à l’aide d’assistants comme IBM Watson, Google DialogFLow, Amazon Lex (AWS) ou Alexa, Chatfuel,
+                
+                \item Insérez dans votre réponse les codes commentés (C.C), et bien évidemment les C.E(s) des (>= 5) exemples d’utilisation.
+            \end{itemize}  
+            
+            
+            \bigskip
+            \noindent Pour coder ce mini-projet, j'utilise le langage Python avec le framework Flask et le module tensorflow.
+
+            \bigskip
+            \noindent Le fichier \underline{requirements.txt} décrit les modules nécessaires au bon fonctionnement de ce petit programme.
+            Il faut donc commencer par: 
+            \begin{itemize}
+                \item Créer un environnement virtuel: 
+                    \begin{tcolorbox}[colback=lightgray!6, colframe=black, left=5mm, right=5mm, top=2mm, bottom=2mm, boxrule=0.1mm]
+                        python -m venv venv ou python3 -m venv venv
+                    \end{tcolorbox}
+
+                \item Activer l'environnement virtuel: 
+                    \begin{tcolorbox}[colback=lightgray!6, colframe=black, left=5mm, right=5mm, top=2mm, bottom=2mm, boxrule=0.1mm]
+                        source venv/bin/activate
+                    \end{tcolorbox}
+
+                \item Installer les modules: \\ 
+                    \noindent Voici le contenu du fichier \textit{requirements.txt} décrivant les modules à installer.
+                    \lstinputlisting{CHAPITRE-7/7.2-A-RENDRE/requirements.txt}
+                    \begin{tcolorbox}[colback=lightgray!6, colframe=black, left=5mm, right=5mm, top=2mm, bottom=2mm, boxrule=0.1mm]
+                        pip install -r requirements.txt ou pip3 install -r requirements.txt
+                    \end{tcolorbox}
+
+                \item Lancer le programme: 
+                    \begin{tcolorbox}[colback=lightgray!6, colframe=black, left=5mm, right=5mm, top=2mm, bottom=2mm, boxrule=0.1mm]
+                        python app.py ou python3 app.py
+                    \end{tcolorbox}
+
+                \item Rendez-vous dans le navigateur de votre choix à l'adresse: 
+                    \begin{tcolorbox}[colback=lightgray!6, colframe=black, left=5mm, right=5mm, top=2mm, bottom=2mm, boxrule=0.1mm]
+                        http://localhost:5000 ou http://127.0.0.1:5000
+                    \end{tcolorbox}
+            \end{itemize}
+
+            \noindent Quand on saisie la commande \textit{tree} au terminal, voici  le retour: 
+            \begin{figure}[ht]
+                \makebox[\textwidth][l]{
+                    \hspace{0.4cm}
+                    \includegraphics[width=0.5\textwidth]{CHAPITRE-7/7.2-A-RENDRE/contents/static/screenshots/screen1.png}
+                }
+            \end{figure}
+
+            \newpage
+            \noindent Je présente ici que la logique:
+
+            \begin{enumerate}
+                \item \textbf{settings.py}: Initialise notre application. 
+                    \lstinputlisting{CHAPITRE-7/7.2-A-RENDRE/contents/settings.py}
+                    \noindent Ce code configure une application Flask avec une route principale ("/") 
+                    qui utilise une vue personnalisée (ChatView). La vue ChatView est définie dans le fichier views.py et doit hérite de views.MethodView pour gérer différentes méthodes HTTP.
+                
+                \item \textbf{intents.json}:
+                    \lstinputlisting{CHAPITRE-7/7.2-A-RENDRE/contents/intents.json}
+                    \noindent Ce fichier JSON définit les intentions que le chatbot peut reconnaître, les phrases que l'utilisateur peut utiliser 
+                    pour exprimer ces intentions, et les réponses possibles du chatbot. Chaque intention est représentée par un objet JSON avec des propriétés tag, 
+                    patterns, responses, et context. Ce fichier est utilisé pour entraîner le modèle de classification et pour fournir des réponses appropriées aux utilisateurs.
+                
+                    \item \textbf{chat.py}:
+                    \lstinputlisting{CHAPITRE-7/7.2-A-RENDRE/contents/chat.py}
+                    \noindent Ce code définit un chatbot qui utilise un modèle de classification pour prédire l'intention d'une phrase donnée et 
+                    fournir une réponse appropriée. Les fonctions \textit{clean\_up\_sentence}, \textit{bow}, \textit{predict\_class}, et \textit{get\_response} sont utilisées pour 
+                    traiter les phrases, créer des sacs de mots, prédire les classes, et récupérer les réponses, respectivement. Les données nécessaires 
+                    (mots, classes, modèle) sont chargées depuis des fichiers en utilisant pickle et load\_model.
+
+                \newpage
+                \item \textbf{views.py}:
+                    \lstinputlisting{CHAPITRE-7/7.2-A-RENDRE/contents/views.py}
+                    \noindent Ce code définit une vue Flask pour un chatbot qui gère les requêtes GET et POST. 
+                    La méthode GET rend un template HTML pour l'interface du chatbot, tandis que la méthode POST traite 
+                    les messages envoyés par l'utilisateur, prédit l'intention du message, et renvoie une réponse appropriée. Les intentions et 
+                    les réponses sont chargées depuis un fichier JSON, et les fonctions de prédiction et de réponse sont importées depuis le module chat.
+
+                \item \textbf{chat.html}: 
+                    \lstinputlisting{CHAPITRE-7/7.2-A-RENDRE/contents/templates/chat.html}
+                    \noindent Ce code HTML définit une interface utilisateur pour un chatbot. Il inclut une structure de base avec un en-tête, 
+                    un corps, et un pied de page. Le corps contient une boîte de dialogue et un formulaire pour envoyer des messages. 
+                    Le script JavaScript gère la soumission du formulaire, envoie les messages au serveur via une requête POST, et affiche les réponses du bot dans la boîte de dialogue. 
+                    Le style de la page est défini par un fichier CSS externe.
+
+                \item \textbf{run.py}:
+                    \lstinputlisting{CHAPITRE-7/7.2-A-RENDRE/run.py}
+                    \noindent Ce petit de code permet de lancer le serveur de développement pour tester notre application.
+            \end{enumerate}
+
+        \newpage
+        \noindent Voici quelques captures d'écran de ce prtit projet: 
+
+        \begin{enumerate}
+            \item \underline{Capture 1}: 
+                \begin{figure}[ht]
+                    \makebox[\textwidth][l]{
+                        \hspace{0.4cm}
+                        \includegraphics[width=0.6\textwidth]{CHAPITRE-7/7.2-A-RENDRE/contents/static/screenshots/screen2.png}
+                    }
+                \end{figure}
+            
+            \item \underline{Capture 2}: 
+                \begin{figure}[ht]
+                    \makebox[\textwidth][l]{
+                        \hspace{0.4cm}
+                        \includegraphics[width=0.6\textwidth]{CHAPITRE-7/7.2-A-RENDRE/contents/static/screenshots/screen3.png}
+                    }
+                \end{figure}
+            
+            \newpage
+            \item \underline{Capture 3}:
+                \begin{figure}[ht]
+                    \makebox[\textwidth][l]{
+                        \hspace{0.4cm}
+                        \includegraphics[width=0.5\textwidth]{CHAPITRE-7/7.2-A-RENDRE/contents/static/screenshots/screen4.png}
+                    }
+                \end{figure}
+            
+            \item \underline{Capture 4}:
+                \begin{figure}[ht]
+                    \makebox[\textwidth][l]{
+                        \hspace{0.4cm}
+                        \includegraphics[width=0.5\textwidth]{CHAPITRE-7/7.2-A-RENDRE/contents/static/screenshots/screen5.png}
+                    }
+                \end{figure}
+            \newpage
+            \item \underline{Capture 5}:
+                \begin{figure}[ht]
+                    \makebox[\textwidth][l]{
+                        \hspace{0.4cm}
+                        \includegraphics[width=0.7\textwidth]{CHAPITRE-7/7.2-A-RENDRE/contents/static/screenshots/screen6.png}
+                    }
+                \end{figure}
+        \end{enumerate}
+
+        
+        \begin{tcolorbox}[colback=lightgray!6, colframe=black, left=5mm, right=5mm, top=2mm, bottom=2mm, boxrule=0.1mm]
+            Le développement de ce chatbot a permis de mettre en pratique des concepts de base de la programmation et de machine learning. 
+            En utilisant Flask pour le backend et TensorFlow pour le traitement du langage naturel, j'ai pu créer un outil interactif 
+            capable de comprendre et de répondre aux questions des utilisateurs. Ce projet montre comment la combinaison de ces technologies 
+            peut conduire à des solutions innovantes et utiles.
+        \end{tcolorbox}
+    
+    \newpage
+    \section{Mise en production d'une application Flask}
+
+        \noindent J'ai choisi d'ajouter cette section pour mettre en évidence la mise en 
+        production d'une application Flask sur pythonanywhere. Pour se faire, nous allons nous baser 
+        sur mon blog personnel codé dans l'exercice \ref{blog} du chapitre 5.
+
+        \bigskip
+        \noindent Voici les étapes à suivre:
+
+        \begin{enumerate}
+            \item \textbf{Préparer l'application}:\\
+                \noindent Voir la sous-section \ref{blog} du chapitre 5, traitant la réalisation d'un chatbot. 
+            
+            \item \textbf{Mettre l'application sur Github}:\\
+                \noindent Et oui, nous allons utiliser Git et Github pour déployer notre application sur 
+                pythonanywhere.
+                \begin{itemize}
+                    \item \underline{Créer un repository Github}: On crée un dépôt Github nommé \textit{chatbot}.
+                    \item En suite mettre tout le code-source de notre chatbot dans le repository Github. 
+                        En prenant soin de bien commenter tous les commits. Cette application est ensuite clonable avec git 
+                        via \url{https://github.com/codewithmpia/codewithmpia-blog.git}.
+                \end{itemize}
+
+            \item \textbf{Mettre l'application sur pythonanywhere}:\\
+                \noindent Maintenant que le plus dur est fait, voici en detail, étape par étape, le processus de mise en production
+                sur pythonanywhere:
+                \begin{itemize}
+                    \item \underline{Créer un compte pythonanywhere}: Voir \url{https://pythonanywhere.com/}
+                    \item \underline{Créer une application sur pythonanywhere}: Maintenant que nous nous sommes 
+                    inscrit et disposons des identifiants, nous pouvons nous connecter et créer une nouvelle application web. 
+                    \begin{itemize}
+                        \item Cliquer sur Web dans l'onglet en haut à droite
+                        \item Cliquez sur Add a new web app puis Next
+                        \item Séléctionner Manual configuration (including virtualenv), puis choisir Python 3.10,  puis cliquer sur Next
+                        \item Cliquer sur Consoles en haut à droite puis cliquer sur Bash pour ouvrir une console Bash. Et là toutes les commandes linux fonctionnent comme 
+                            en local
+                        \item Cloner le repository Github, qui je le rappelle est disponible via \url{https://github.com/codewithmpia/codewithmpia-blog.git}
+                    \end{itemize}
+                    \item \underline{Créér en environnement virtuel et installer les modules}:
+                        \noindent Déplaçons-nous dans le dossier \textit{codewithmpia-blog} grâce à la commende \textit{cd}, puis taper les commades suivantes:
+                        \begin{tcolorbox}[colback=lightgray!6, colframe=black, left=-60mm, right=5mm, top=2mm, bottom=2mm, boxrule=0.1mm]
+                            \begin{verbatim}
+                                # créer un environnement virtuel
+                                python -m venv venv
+
+                                # Activez-le 
+                                source venv/bin/activate
+
+                                # Installez les modules
+                                pip install -r requirements.txt
+                            \end{verbatim}
+                        \end{tcolorbox}
+                    \item \underline{Créer le fichier .env dans la racine de l'application}:
+                        \noindent Définissez les variables suivantes dans le fichier: Ce sont les variables d'environnement de notre application.
+                        \begin{tcolorbox}[colback=lightgray!6, colframe=black, left=-60mm, right=5mm, top=2mm, bottom=2mm, boxrule=0.1mm]
+                            \begin{verbatim}
+                                DATABASE_URL='mysql+pymysql://username:passwordd@host/dbname'
+                                SECRET_KEY="choisir une clé secrete"
+                            \end{verbatim}
+                        \end{tcolorbox}
+                    \item \underline{Rétourner dans le Dashboard}: Une fois tous les modules installés, retournez dans le Dashboard de pythonanywhere et cliquer sur Web à nouveau, puis définir
+                        \begin{itemize}
+                            \item Source code: /home/codewithmpia/codewithmpia-blog
+                            \item Working directory: /home/codewithmpia/codewithmpia-blog
+                            \item WSGI configuration file: 
+                                \begin{tcolorbox}[colback=lightgray!6, colframe=black, left=-70mm, right=5mm, top=2mm, bottom=2mm, boxrule=0.1mm]
+                                    \begin{verbatim}
+                                        import sys
+                                        path = '/home/codewithmpia/codewithmpia-blog'
+                                        if path not in sys.path:
+                                            sys.path.append(path)
+                                        from run_app import app as application  # noqa
+                                    \end{verbatim}
+                                \end{tcolorbox}
+                            \item Virtualenv: /home/codewithmpia/codewithmpia-blog/venv
+                        \end{itemize}
+                \end{itemize}
+                \item \textbf{Recharger l'application}: En cliquant sur le bouton:\\ Reload codewithmpia.pythonanywhere.com
+                \item \textbf{Accéder à l'aplication}: Si toutes les étapes décrites ci-haut sont effectuées correctement, 
+                l'opération de publication du site est terminée et le site drevrait être accessible via \\
+                \url{https://codewithmpia.pythonanywhere.com/}.
+        \end{enumerate}
+
+        \noindent Voici quelques captures d'écran: 
+
+        \includegraphics[width=0.8\textwidth]{PUBLICATION/screen1.png}\\
+        \includegraphics[width=0.5\textwidth]{PUBLICATION/screen8.png}
+        \includegraphics[width=0.5\textwidth]{PUBLICATION/screen6.png}
+        \includegraphics[width=0.8\textwidth]{PUBLICATION/screen10.png}\\
+        \includegraphics[width=0.5\textwidth]{PUBLICATION/screen9.png}
+        \includegraphics[width=0.6\textwidth]{PUBLICATION/screen13.png}
+        \includegraphics[width=0.8\textwidth]{PUBLICATION/screen14.png}
+        
+    \begin{tcolorbox}[colback=lightgray!6, colframe=black, left=2mm, right=5mm, top=2mm, bottom=2mm, boxrule=0.1mm]
+        La publication d'une application Flask sur PythonAnywhere est un processus relativement simple et efficace. Cette plateforme offre une solution pratique pour les développeurs qui souhaitent déployer rapidement leurs applications web sans avoir à gérer l'infrastructure serveur. En suivant les étapes décrites, vous pouvez facilement mettre en production votre application Flask et la rendre accessible au public.
+
+        Il est important de souligner l'importance de l'utilisation de Git et GitHub dans le processus de développement et de déploiement. Git permet de gérer les versions de votre code de manière efficace, facilitant ainsi la collaboration et le suivi des modifications. GitHub, en tant que plateforme de gestion de versions, offre des fonctionnalités supplémentaires telles que l'intégration continue, les revues de code et la gestion des issues, ce qui améliore considérablement la qualité et la fiabilité de votre application.
+
+        En intégrant Git et GitHub dans votre flux de travail, vous pouvez non seulement simplifier le déploiement de votre application sur PythonAnywhere, mais aussi bénéficier d'un environnement de développement plus robuste et collaboratif. Cela vous permet de vous concentrer sur l'amélioration continue de votre application tout en assurant une gestion efficace des versions et des contributions.
+
+        En résumé, la publication d'une application Flask sur PythonAnywhere, combinée à l'utilisation de Git et GitHub, constitue une approche complète et moderne pour le développement et le déploiement d'applications web.
+    \end{tcolorbox}
+    
+    \newpage
+    \section{Conclusion générale}
+        \noindent Que retenir de ce cours (informatique fondamentale)?\\
+
+        \noindent Je retiens que le développement d'une application web moderne nécessite une combinaison de technologies et 
+        d'outils pour couvrir différents aspects du processus de développement. Parmi lesquels nous pouvons citer: 
+
+        \begin{enumerate}
+            \item HTML et CSS sont utilisés pour créer et styliser l'interface utilisateur.
+            \item JavaScript est utilisé pour ajouter des fonctionnalités interactives et 
+            gérer les interactions utilisateur.
+            \item Un langage serveur comme Python est utilisé pour le développement côté serveur et la gestion des requêtes.
+            \item Les bases de données sont utilisées pour stocker et gérer les données de manière efficace. 
+            \item Git et GitHub facilitent la collaboration et la gestion des versions du code. 
+            \item La maîtrise d'une distribution Linux et la connaissance de certaines commandes (scp, netcat, ssh, wget, curl, git, ...) 
+            permettent pour le déploiement et le débogage des applications. 
+            \item   Enfin, un serveur héberge l'application et gère les requêtes des clients. 
+        \end{enumerate}
+
+        \noindent Ensemble, ces technologies permettent de créer des applications web robustes, évolutives et collaboratives.
+\end{document}
+
+

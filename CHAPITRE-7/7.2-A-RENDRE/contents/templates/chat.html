@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Titre de la page -->
+        <title>Chatbot</title>
+        <!-- Fichier de style CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <!-- Conteneur principal -->
+        <div class="container">
+            <!-- Entete de la page -->
+            <header id="head">
+                <h1>ChatBot</h1>
+                <p>Cette petite application est créée dans le cadre du projet final du cours UOR L1 Info.</p>
+                <p>Ce bot est capable de répondre à quelques questions de base.</p>
+            </header>
+            <!-- Corps de la page -->
+            <main id="main">
+                <!-- Boite de dialogue -->
+                <div id="chat-box" class="chat-box"></div>
+                <!-- Formulaire pour envoyer un message -->
+                <form id="chat-form"> 
+                    <!-- Zone de saisie pour le message -->
+                    <textarea id="message" placeholder="Taper votre message ici... ex: bonjour" autocomplete="off" required></textarea>
+                    <!-- Bouton pour envoyer le message -->
+                    <button type="submit" class="btn">Envoyer</button>
+                </form>
+            </main>
+            <!-- Pied de page -->
+            <footer id="footer">
+                <p>2024, Mpia Mimpiya, L1 Info IED Paris 8</p>
+            </footer>
+        </div>
+
+    <script>
+        // Ajoute un événement pour la soumission du formulaire
+        document.addEventListener("DOMContentLoaded", function() {
+            const chatForm = document.getElementById("chat-form");
+            const messageInput = document.getElementById("message");
+            const chatBox = document.getElementById("chat-box");
+
+            // Fonction qui s exécute lorsque le formulaire est soumis
+            chatForm.addEventListener("submit", function(event) {
+                // Empêche la page de se recharger
+                event.preventDefault();
+
+                // Récupère le message saisi par utilisateur
+                const message = messageInput.value;
+
+                // Envoie une requête POST au serveur avec le message
+                fetch("/", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({message: message})
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // Crée un élément div pour le message utilisateur
+                    const userMessageDiv = document.createElement("div");
+                    userMessageDiv.className = "vous"
+                    userMessageDiv.innerHTML = `<b>Vous:</b> ${message}`;
+                    chatBox.appendChild(userMessageDiv);
+
+                    // Crée un élément div pour la réponse du bot
+                    const botMessageDiv = document.createElement("div");
+                    botMessageDiv.className = "bot"
+                    botMessageDiv.innerHTML = `<b>Bot:</b> ${data.response}`;
+                    chatBox.appendChild(botMessageDiv);
+
+                    // Vide le champ de saisie du message
+                    messageInput.value = "";
+                    
+                })
+                .catch(error => console.error("Error:", error));
+            });
+        });
+    </script>
+</body>
+</html>
+

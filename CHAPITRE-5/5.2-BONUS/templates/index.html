@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 5.2 (Bonus)</title>
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+
+    <style>
+        /* Conteneur principal */
+        .container {
+            margin-top: 2rem;
+        }
+
+        /* Titre et description */
+        .head {
+            margin-bottom: 2rem;
+        }
+
+        /* Etiquettes des champs */
+        label {
+            display: block;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        /* Champ texte pour le message */
+        .h-200 {
+            height: 200px;
+            resize: none;
+        }
+
+        /* Liste des contacts */
+        .contacts {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        /* Un contact */
+        .contact {
+            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+        }
+
+        /* En-tête du contact */
+        .contact-head {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background-color: #F7FAFB;
+            padding: 5px 20px;
+        }
+
+        /* Message du contact */
+        .contact-message {
+            padding: 20px;
+        }
+
+        /* Message alerte */
+        .alert {
+            width: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            border: 1px solid transparent;
+            padding: 12px 20px;
+            border-radius: 3px;
+        }
+
+        /* Types alertes */
+        .alert.success {
+            color: #155724;
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+        }
+
+        .alert.danger {
+            color: #721c24;
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+        }
+
+        .alert.info {
+            color: #0c5460;
+            background-color: #d1ecf1;
+            border-color: #bee5eb;
+        }
+
+        /* Règles de media pour affichage sur mobile */
+        @media screen and (max-width: 768px) {
+            .contacts {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="head">
+            <h1>Prise de rendez-vous</h1>
+            <p>Cette page vous permet de programmer le rendez-vous.</p>
+        </div>
+
+        <form action="{{ url_for('index') }}" method="post">
+            {{ form.csrf_token() }}
+            <div class="grid">
+                <div class="form-group">
+                    {{ form.name.label }}
+                    {{ form.name }}
+                </div>
+                <div class="form-group">
+                    {{ form.email.label }}
+                    {{ form.email }}
+                </div>
+            </div>
+            <div class="grid">
+                <div class="form-group">
+                    {{ form.subject.label }}
+                    {{ form.subject }}
+                </div>
+                <div class="form-group">
+                    {{ form.date.label }}
+                    {{ form.date }}
+                </div>
+            </div>
+            <div class="form-group">
+                {{ form.message.label }}
+                {{ form.message(class="h-200") }}
+            </div>
+            {{ form.submit }}
+        </form>
+
+        <div class="contacts-container">
+            <h3>Tous les contacts</h3>
+
+            <!-- Gestion des messages de flash -->
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    <!-- Affichage des messages de flash -->
+                    {% for category, message in messages %}
+                        <div class="alert {{ category }}">
+                            <strong>{{ message }}</strong>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+
+            <!-- Liste des contacts -->
+            <div class="contacts">
+                <!-- Parcours des contacts -->
+                {% for contact in contacts %}
+                    <!-- Un contact -->
+                    <div class="contact">
+                        <!-- En-tête du contact -->
+                        <div class="contact-head">
+                            <span>Client: <strong>{{ contact.name }}</strong></span>
+                            <span>Sujet: <strong>{{ contact.subject }}</strong></span>
+                            <span>Date: <strong>{{ contact.date.strftime("%d/%m/%Y") }}</strong></span>
+                        </div>
+                        <!-- Message du contact -->
+                        <div class="contact-message">{{ contact.message }}</div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

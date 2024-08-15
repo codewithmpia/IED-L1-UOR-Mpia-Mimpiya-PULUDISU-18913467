@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affichage des Données</title>
+    <link rel="stylesheet" href="./assets/style.css">
+    <script defer src="./assets/script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Données des Projets Horizon</h1>
+        
+        <p>
+            Affichage des donnees filtrees dans un tableau utilisant 
+            api fetch de javascript
+        </p>
+        
+        <!-- Tableau de données -->
+        <table id="data-table">
+            <thead>
+                <tr>
+                    <th>Identifiant</th>
+                    <th>Source</th>
+                    <th>Pays</th>
+                    <th>Nom Entité</th>
+                    <th>Role</th>
+                </tr>
+            </thead>
+
+            <tbody>
+            </tbody>
+        </table>
+
+        <!-- pagination -->
+        <div class="pagination">
+            <button class="btn" id="prev-page" disabled>Précédent</button>
+            <span id="page-info"></span>
+            <button class="btn" id="next-page">Suivant</button>
+        </div>
+    </div>
+</body>
+</html>

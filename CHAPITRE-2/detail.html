@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <!-- Les méta pour améliorer le referencement -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="author" content="codewthmpia">
+  <meta name="description" content="Découvrez des astuces et conseils pratiques pour améliorer vos compétences en développement. 
+  Restez informé sur les dernières tendances et technologies en matière de développement web et logiciel.">
+  <meta name="keywords" content="web, programmation, python, flask, django, html, css, javascript, sql, tailwindcss, git, linux, adminstration, système">
+  <meta name="robots" content="index, follow">
+  <title>Coder vos Apis avec Flask | codewithmpia</title>
+  <!-- Les icones -->
+  <link rel="icon" sizes="512x512" href="./asssets/images/favicon/android-chrome-512x512.png">
+  <link rel="icon" sizes="192x192" href="./asssets/images/favicon/android-chrome-192x192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./asssets/images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./asssets/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./asssets/images/favicon/favicon-16x16.png">
+  <link rel="icon" href="./asssets/images/favicon/favicon.ico">
+</head>
+  <body>
+    <header id="header">
+      <a href="./index.html" class="logo">
+        <img src="./asssets/images/Logo.png" alt="Mon Logo">
+      </a>
+    </header>
+    <!-- BLOC MAIN -->
+    <main id="main">
+      <!-- ENTETE -->
+      <section id="head">
+        <div class="head-content">
+          <div class="head-links">
+            <a href="./index.html">
+              <img src="./asssets/images/chevron-left.svg" alt="Icon retour">
+              <span>Retour</span>
+            </a>
+            <a href="https://github.com/codewithmpia/flask_api" target="_blank">
+                <span>Voir sur Github</span>
+                <img src="./asssets/images/external-link.svg" alt="Icon lien extéreieur">
+            </a>
+          </div>
+          <div class="post-head">
+            <h2>Coder vos Apis avec Flask</h2>
+            <p class="post-resume">
+              Apprenez à créer et déployer vos APIs efficacement avec Flask, 
+              un microframework léger et puissant en Python, idéal pour le développement 
+              rapide des applications web.
+            </p>
+            <div class="post-meta">
+                <a href="https://github.com/codewithmpia" target="_blank" class="post-meta-item">
+                  <img src="./asssets/images/github.svg" alt="Logo Github">
+                  <span>codewithmpia</span>
+                </a>
+                <div class="post-meta-item">
+                  <img src="./asssets/images/calendar.svg" alt="Icone calendrier">
+                  <span>22.07.2024</span>
+                </div>
+                <div class="post-meta-item">
+                  <img src="./asssets/images/messages.svg" alt="Icone message">
+                  <span>2 Commentaires</span>
+                </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- CONTENU -->
+      <section id="contents">
+        <div class="container">
+          <div class="post-image">
+            <img src="./asssets/images/posts/post1.jpg" alt="coder-vos-apis-avec-flask">
+          </div>
+          <div class="post-content">
+            <p>
+              Flask est un microframework Python populaire, idéal pour développer des APIs rapidement et efficacement. 
+              Il est léger, flexible, et offre une grande liberté aux développeurs pour organiser 
+              leur code selon leurs besoins. 
+            </p>
+            <p>
+              Dans cet article, vous découvrirez comment configurer un projet Flask, créer des routes, 
+              et gérer les requêtes HTTP.
+            </p> 
+            <p>
+              Nous aborderons également utilisation des extensions pour ajouter des fonctionnalités comme 
+              la gestion de bases de données et authentification. 
+              En suivant ces étapes, vous pourrez développer des APIs performantes et facilement déployables.
+            </p>
+
+            <p>Voici un exemple du code: </p>
+            
+            <div class="codehilite">
+              <pre>
+                <code class="language-python">
+                  def hello_word():
+                    print("Hello World")
+                </code>
+              </pre>
+            </div>
+
+          </div>
+          
+          <!-- BLOC COMMENTAIRE -->
+          <div class="comments-container">
+            <h3>2 Commentaires</h3>
+            <!-- Formulaire pour laisser un commentaire -->
+            <form class="comment-form" action="/detail.html" method="post">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name" class="form-label">Votre nom</label>
+                  <input type="text" name="name" id="name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                  <label for="email" class="form-label">Votre adresse mail</label>
+                  <input type="email" name="email" id="email" class="form-control" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="message" class="form-label">Votre commentaire</label>
+                <textarea name="message" id="message" class="form-control h-180"></textarea>
+              </div>
+                <button type="submit" class="btn">Commenter</button>
+            </form>
+            <!-- Liste de commentaires-->
+            <div class="comments">
+              <!-- Commentaire 1 -->
+              <div class="comment">
+                <div class="comment-head">
+                  <img src="./asssets/images/person.png" alt="Avatar user">
+                    <div class="comment-meta">
+                      <h4>Jean Dupont</h4>
+                      <span>, le 26.07.2024</span>
+                    </div>
+                </div>
+                <div class="comment-body">
+                  Un très bon article, comment d'habitude. Quant au code, c'est bien expliqué.
+                </div>
+              </div>
+              <!-- Commentaire 2 -->
+              <div class="comment">
+                <div class="comment-head">
+                  <img src="./asssets/images/person.png" alt="Avatar user">
+                    <div class="comment-meta">
+                      <h4>Marie Popins</h4>
+                      <span>, le 28.07.2024</span>
+                    </div>
+                </div>
+                <div class="comment-body">
+                  Je kiff tes explications et ton style de code.
+                </div>
+              </div>
+              <!-- Commentaire n -->
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

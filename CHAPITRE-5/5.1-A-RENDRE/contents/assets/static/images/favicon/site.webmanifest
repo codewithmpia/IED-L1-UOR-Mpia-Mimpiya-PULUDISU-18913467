@@ -1,0 +1,54 @@
+{
+  "name":"codewithmpia.fr",
+  "short_name":"codewithmpia",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "theme_color": "#009688",
+  "background_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/static/images/favicon/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/static/images/favicon/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/static/images/favicon/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/static/images/favicon/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/static/images/favicon/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    }
+  ],
+  "splash_pages": null,
+  "scope": "/",
+  "lang": "fr",
+  "dir": "ltr",
+  "categories": ["education", "utilities", "programming"],
+  "screenshots": [
+    {
+      "src": "/static/images/screenshots/screenshot-lg.png",
+      "sizes": "1301x943",
+      "type": "image/png"
+    },
+    {
+      "src": "/static/images/screenshots/screenshot-sm.png",
+      "sizes": "537x921",
+      "type": "image/png"
+    }
+  ],
+  "prefer_related_applications": true
+}

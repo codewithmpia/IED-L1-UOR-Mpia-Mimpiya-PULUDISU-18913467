@@ -1,0 +1,38 @@
+{% macro render_messages(dismissible=true) -%}
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for category, message in messages %}
+        <div class="message {{ category }}">
+          <strong>{{ message }}</strong>
+          <svg class="close-btn" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" 
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+            stroke-linejoin="round">
+            <path d="M18 6 6 18"/>
+            <path d="m6 6 12 12"/>
+          </svg>
+        </div>
+
+        <script>
+          const messages = {
+            elements: {
+              messagesElts: document.querySelectorAll(".message"),
+              closeBtns: document.querySelectorAll(".close-btn")
+            },
+            init() {
+              // Loop through each close button
+              this.elements.closeBtns.forEach((closeBtn, index) => {
+                // Add click event listener to each close button
+                closeBtn.addEventListener('click', (e) => {
+                  // When a close button is clicked, remove the corresponding message element
+                  this.elements.messagesElts[index].remove();
+                });
+              });
+            }
+          }
+          messages.init();
+        </script>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+{%- endmacro %}
+

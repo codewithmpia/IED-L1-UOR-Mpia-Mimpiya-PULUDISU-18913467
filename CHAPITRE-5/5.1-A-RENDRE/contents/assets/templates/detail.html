@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+{% from "macro.html" import render_messages %}
+{% block title %}
+  {{ post.title }} | codewithmpia
+{% endblock %}
+
+
+{% block styles %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/detail.css') }}">
+{% endblock %}
+
+
+{% block head %}
+  <section id="head">
+    <div class="head-content">
+      <!-- Lien pour revenir à la page accueil -->
+      <div class="head-links">
+        <a href="{{ url_for('index') }}">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" 
+            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" 
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="m15 18-6-6 6-6"/>
+          </svg>
+          <span>Retour</span>
+        </a>
+        <!-- Lien pour aller sur la page Github du projet -->
+        <a href="https://github.com/codewithmpia/{{ post.link }}" target="_blank">
+            <span>Voir sur Github</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" 
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" 
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6"/>
+                <path d="m21 3-9 9"/>
+                <path d="M15 3h6v6"/>
+            </svg>
+        </a>
+      </div>
+      <!-- Contenu de la page -->
+      <div class="post-head">
+        <h2>{{ post.title }}</h2>
+        <p class="post-resume">{{ post.resume|safe }}</p>
+        <div class="post-meta">
+            <!-- Informations sur auteur -->
+            <a href="https://github.com/codewithmpia" target="_blank" class="post-meta-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" 
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
+                <path d="M9 18c-4.51 2-5-2-7-2"/>
+              </svg>
+              <span>codewithmpia</span>
+            </a>
+            
+            <!-- Date de création du post -->
+            <div class="post-meta-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" 
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" 
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 2v4"/>
+                <path d="M16 2v4"/>
+                <rect width="18" height="18" x="3" y="4" rx="2"/>
+                <path d="M3 10h18"/>
+              </svg>
+              <span>{{ post.created_at.strftime("%d.%m.%Y") }}</span>
+            </div>
+            <!-- Nombre de commentaires -->
+            <div class="post-meta-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" 
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" 
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4c0-1.1.9-2 2-2h8a2 2 0 0 1 2 2z"/>
+                <path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1"/>
+              </svg>
+              <span>{{ comments|length }} Commentaire{{ comments|pluralize }}</span>
+            </div>
+        </div>
+      </div>
+  </div>
+  </section>
+{% endblock %}
+
+
+{% block main %}
+  <section id="contents">
+    <div class="container">
+        <!-- Image du post -->
+        <div class="post-image">
+          <img src="/static/images/posts/{{ post.image }}" alt="{{ post.slug }}">
+        </div>
+        <!-- Messages erreur/succès -->
+        {{ render_messages(dismissible=true) }}
+
+        <!-- Contenu du post -->
+        <div>{{ post.content|format_md|safe }}</div>
+
+        <!-- Formulaire pour ajouter un commentaire -->
+        <div class="comments-container">
+          <h3>{{ comments|length }} Commentaire{{ comments|pluralize }}</h3>
+
+          <form class="comment-form" action="{{ url_for('detail', id=post.id) }}" method="post">
+            {{ form.csrf_token() }}
+            <div class="form-row">
+              <div class="form-group">
+                {{ form.author.label(class="form-label") }}
+                {{ form.author(class="form-control") }}
+              </div>
+              <div class="form-group">
+                {{ form.email.label(class="form-label") }}
+                {{ form.email(class="form-control") }}
+              </div>
+            </div>
+            <div class="form-group">
+              {{ form.message.label(class="form-label") }}
+              {{ form.message(class="form-control h-180") }}
+            </div>
+            {{ form.submit(class="btn") }}
+          </form>
+
+          <!-- Affichage des commentaires -->
+          <div class="comments">
+            {% for comment in comments %}
+              <div class="comment">
+                <div class="comment-head">
+                  <img src="{{ url_for('static', filename='images/person.png') }}" alt="Avatar user">
+                  <div class="comment-meta">
+                    <h4>{{ comment.author }}</h4>
+                    <span>, le {{ comment.created_at.strftime("%d.%m.%Y") }}</span>
+                  </div>
+                </div>
+                <div class="comment-body">{{ comment.message|safe }}</div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+    </div>
+  </section>
+{% endblock %}
+

@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toutes les formations | bedev</title>
+
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/buttons.css">
+    <link rel="stylesheet" href="./assets/css/alerts.css">
+    <link rel="stylesheet" href="./assets/css/index.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    <script defer src="./assets/js/main.js"></script>
+</head>
+<body>
+    <header id="header">
+        <nav class="container navbar">
+            <a href="./index.html" class="logo">bedev</a>
+
+            <div class="navigation">
+                <div class="desktop-menu">
+                    <a href="./index.html" class="navlink active">Formations</a>
+                    <a href="#" class="navlink">Blog</a>
+                    <a href="#" class="navlink">Forum</a>
+                    <a href="#" class="navlink">Contact</a>
+                </div>
+                
+                <svg class="tablet-profile-open-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="8" r="5"/>
+                    <path d="M20 21a8 8 0 0 0-16 0"/>
+                </svg>
+
+                <div class="tablet-profile-data">
+                    <div class="tablet-profile-data-head">
+                        <svg class="tablet-profile-close-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 6 6 18"/>
+                            <path d="m6 6 12 12"/>
+                        </svg>
+                    </div>
+
+                    <div class="tablet-profile-data-links">
+                        <a href="#" class="tablet-profile-link active">Connexion</a>
+                        <a href="#" class="tablet-profile-link">Inscription</a>
+                        <a href="#" class="tablet-profile-link">Déconnexion</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="desktop-profile">
+                <a href="#" class="desktop-profile-link">
+                    <span>Se connecter</span>
+                </a>
+                <a href="#" class="desktop-profile-link active">
+                    <span>Créer un compte</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 8L22 12L18 16"/>
+                        <path d="M2 12H22"/>
+                    </svg>
+                </a>
+            </div>
+
+            <svg class="mobile-menu-open-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="4" x2="20" y1="12" y2="12"/>
+                <line x1="4" x2="20" y1="6" y2="6"/>
+                <line x1="4" x2="20" y1="18" y2="18"/>
+            </svg>
+
+            <div class="mobile-menu">
+                <div class="mobile-menu-head">
+                    <div class="mobile-menu-head-content">
+                        <div class="mobile-profile">
+                            <a href="#" class="mobile-menu-link">Connexion</a>
+                            <a href="#" class="mobile-menu-link">Inscription</a>
+                        </div>
+                        <svg class="mobile-menu-close-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 6 6 18"/>
+                            <path d="m6 6 12 12"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="mobile-menu-links">
+                    <a href="./index.html" class="mobile-menu-link active">Formations</a>
+                    <a href="#" class="mobile-menu-link">Blog</a>
+                    <a href="#" class="mobile-menu-link">Forum</a>
+                    <a href="#" class="mobile-menu-link">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main">
+        <section id="head">
+            <div class="container head-container">
+                <div class="page-content">
+                    <h1 class="head-title">Formations</h1>
+                    <h4 class="head-subtitle">Votre savoir commence ici</h4>
+                    <p class="head-note">Passez de débutant à expert grâce à nos formations</p>
+                </div>
+                <div class="page-logo">
+                    <svg class="page-logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/>
+                        <path d="M22 10v6"/>
+                        <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <div id="contents">
+            <div class="container">
+                <div class="categories-container">
+                    <div class="categories">
+                        <button class="categories-btn">
+                            <span>Toutes les catégories</span>
+                            <svg class="categories-btn-svg" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="m6 9 6 6 6-6"/>
+                            </svg>
+                        </button>
+                        <ul class="categories-list">
+                            <li class="categories-item">
+                                <span class="category-text">Toutes les catégories</span>
+                                <span class="number-per-category">0</span>
+                            </li>
+                            <li class="categories-item" data-category="prog-gen">
+                                <span class="category-text">Programmation générale</span>
+                                <span class="number-per-category">0</span>
+                            </li>
+                            <li class="categories-item" data-category="admin">
+                                <span class="category-text">Administration système</span>
+                                <span class="number-per-category">0</span>
+                            </li>
+                            <li class="categories-item" data-category="web">
+                                <span class="category-text">Web</span>
+                                <span class="number-per-category">0</span>
+                            </li>
+                            <li class="categories-item" data-category="astuces">
+                                <span class="category-text">Astuces du développeur</span>
+                                <span class="number-per-category">0</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="alert info">
+                    <strong>Pas de formations disponibles</strong>
+                    <svg class="alert-close-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 6 6 18"/>
+                        <path d="m6 6 12 12"/>
+                    </svg>
+                </div>
+                
+                <div class="formations">
+                    <a href="#" category="prog-gen" class="formation">
+                        <div class="formation-body">
+                            <div class="formation-head">
+                                <div class="formation-logo">
+                                    <img src="./assets/images//logos/python.png" alt="python">
+                                </div>
+                                <h3 class="formation-title">Apprendre Python</h3>
+                            </div>
+                            <p class="formation-resume">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                                Dicta, consequuntur. Quis vero expedita, possimus facere blala alala 
+                                lalalalala 
+                            </p>
+                        </div>
+                        <div class="formation-footer">
+                            <div class="formation-meta">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2 17L12 22L22 17M2 12L12 17L22 12M12 2L2 7L12 12L22 7L12 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span>20 Chapitres</span>
+                            </div>
+                            <div class="formation-meta">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7 21H17M4 3H20C21.1046 3 22 3.89543 22 5V15C22 16.1046 21.1046 17 20 17H4C2.89543 17 2 16.1046 2 15V5C2 3.89543 2.89543 3 4 3Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span>50 Heures</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#" category="admin" class="formation">
+                        <div class="formation-body">
+                            <div class="formation-head">
+                                <div class="formation-logo">
+                                    <img src="./assets/images/logos/sql-database-generic-svgrepo-com.svg" alt="db">
+                                </div>
+                                <h3 class="formation-title">Les bases de données</h3>
+                            </div>
+                            <p class="formation-resume">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                                Dicta, consequuntur. Quis vero expedita, possimus facere blala alala 
+                                lalalalala 
+                            </p>
+                        </div>
+                        <div class="formation-footer">
+                            <div class="formation-meta">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2 17L12 22L22 17M2 12L12 17L22 12M12 2L2 7L12 12L22 7L12 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span>20 Chapitres</span>
+                            </div>
+                            <div class="formation-meta">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7 21H17M4 3H20C21.1046 3 22 3.89543 22 5V15C22 16.1046 21.1046 17 20 17H4C2.89543 17 2 16.1046 2 15V5C2 3.89543 2.89543 3 4 3Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span>50 Heures</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#" category="web" class="formation">
+                        <div class="formation-body">
+                            <div class="formation-head">
+                                <div class="formation-logo">
+                                    <img src="./assets/images/logos/django.svg" alt="django">
+                                </div>
+                                <h3 class="formation-title">Tout sur Django</h3>
+                            </div>
+                            <p class="formation-resume">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                                Dicta, consequuntur. Quis vero expedita, possimus facere blala alala 
+                                lalalalala 
+                            </p>
+                        </div>
+                        <div class="formation-footer">
+                            <div class="formation-meta">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2 17L12 22L22 17M2 12L12 17L22 12M12 2L2 7L12 12L22 7L12 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span>18 Chapitres</span>
+                            </div>
+                            <div class="formation-meta">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7 21H17M4 3H20C21.1046 3 22 3.89543 22 5V15C22 16.1046 21.1046 17 20 17H4C2.89543 17 2 16.1046 2 15V5C2 3.89543 2.89543 3 4 3Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span>32 Heures</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#" category="prog-gen" class="formation">
+                        <div class="formation-body">
+                            <div class="formation-head">
+                                <div class="formation-logo">
+                                    <img src="./assets/images/logos/js.png" alt="python">
+                                </div>
+                                <h3 class="formation-title">JS pour un Dev. Python</h3>
+                            </div>
+                            <p class="formation-resume">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                                Dicta, consequuntur. Quis vero expedita, possimus facere blala alala 
+                                lalalalala 
+                            </p>
+                        </div>
+                        <div class="formation-footer">
+                            <div class="formation-meta">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2 17L12 22L22 17M2 12L12 17L22 12M12 2L2 7L12 12L22 7L12 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span>20 Chapitres</span>
+                            </div>
+                            <div class="formation-meta">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7 21H17M4 3H20C21.1046 3 22 3.89543 22 5V15C22 16.1046 21.1046 17 20 17H4C2.89543 17 2 16.1046 2 15V5C2 3.89543 2.89543 3 4 3Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span>50 Heures</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#" category="web" class="formation">
+                        <div class="formation-body">
+                            <div class="formation-head">
+                                <div class="formation-logo">
+                                    <img src="./assets/images/logos/flask.svg" alt="flask">
+                                </div>
+                                <h3 class="formation-title">Coder avec Flask</h3>
+                            </div>
+                            <p class="formation-resume">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                                Dicta, consequuntur. Quis vero expedita, possimus facere blala alala 
+                                lalalalala 
+                            </p>
+                        </div>
+                        <div class="formation-footer">
+                            <div class="formation-meta">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2 17L12 22L22 17M2 12L12 17L22 12M12 2L2 7L12 12L22 7L12 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span>6 Chapitres</span>
+                            </div>
+                            <div class="formation-meta">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7 21H17M4 3H20C21.1046 3 22 3.89543 22 5V15C22 16.1046 21.1046 17 20 17H4C2.89543 17 2 16.1046 2 15V5C2 3.89543 2.89543 3 4 3Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span>22 Heures</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#" category="web" class="formation">
+                        <div class="formation-body">
+                            <div class="formation-head">
+                                <div class="formation-logo">
+                                    <img src="./assets/images/logos/html-5-svgrepo-com.svg" alt="html5">
+                                </div>
+                                <h3 class="formation-title">Apprendre le HTML5</h3>
+                            </div>
+                            <p class="formation-resume">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                                Dicta, consequuntur. Quis vero expedita, possimus facere blala alala 
+                                lalalalala
+                            </p>
+                        </div>
+                        <div class="formation-footer">
+                            <div class="formation-meta">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2 17L12 22L22 17M2 12L12 17L22 12M12 2L2 7L12 12L22 7L12 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span>20 Chapitres</span>
+                            </div>
+                            <div class="formation-meta">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7 21H17M4 3H20C21.1046 3 22 3.89543 22 5V15C22 16.1046 21.1046 17 20 17H4C2.89543 17 2 16.1046 2 15V5C2 3.89543 2.89543 3 4 3Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span>50 Heures</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#" category="web" class="formation">
+                        <div class="formation-body">
+                            <div class="formation-head">
+                                <div class="formation-logo">
+                                    <img src="./assets/images/logos/css-3.png" alt="css3">
+                                </div>
+                                <h3 class="formation-title">Les bases de CSS</h3>
+                            </div>
+                            <p class="formation-resume">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                                Dicta, consequuntur. Quis vero expedita, possimus facere blala alala 
+                                lalalalala 
+                            </p>
+                        </div>
+                        <div class="formation-footer">
+                            <div class="formation-meta">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2 17L12 22L22 17M2 12L12 17L22 12M12 2L2 7L12 12L22 7L12 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span>20 Chapitres</span>
+                            </div>
+                            <div class="formation-meta">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7 21H17M4 3H20C21.1046 3 22 3.89543 22 5V15C22 16.1046 21.1046 17 20 17H4C2.89543 17 2 16.1046 2 15V5C2 3.89543 2.89543 3 4 3Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span>50 Heures</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#" category="admin" class="formation">
+                        <div class="formation-body">
+                            <div class="formation-head">
+                                <div class="formation-logo">
+                                    <img src="./assets/images/logos/linux.png" alt="linux">
+                                </div>
+                                <h3 class="formation-title">Linux: Ce que tu dois savoir</h3>
+                            </div>
+                            <p class="formation-resume">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                                Dicta, consequuntur. Quis vero expedita, possimus facere blala alala 
+                                lalalalala 
+                            </p>
+                        </div>
+                        <div class="formation-footer">
+                            <div class="formation-meta">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2 17L12 22L22 17M2 12L12 17L22 12M12 2L2 7L12 12L22 7L12 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span>20 Chapitres</span>
+                            </div>
+                            <div class="formation-meta">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7 21H17M4 3H20C21.1046 3 22 3.89543 22 5V15C22 16.1046 21.1046 17 20 17H4C2.89543 17 2 16.1046 2 15V5C2 3.89543 2.89543 3 4 3Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span>50 Heures</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#" category="admin" class="formation">
+                        <div class="formation-body">
+                            <div class="formation-head">
+                                <div class="formation-logo">
+                                    <img src="./assets/images/logos/git-svgrepo-com.svg" alt="git">
+                                </div>
+                                <h3 class="formation-title">Les secrets de Git</h3>
+                            </div>
+                            <p class="formation-resume">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                                Dicta, consequuntur. Quis vero expedita, possimus facere blala alala 
+                                lalalalala 
+                            </p>
+                        </div>
+                        <div class="formation-footer">
+                            <div class="formation-meta">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2 17L12 22L22 17M2 12L12 17L22 12M12 2L2 7L12 12L22 7L12 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span>20 Chapitres</span>
+                            </div>
+                            <div class="formation-meta">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7 21H17M4 3H20C21.1046 3 22 3.89543 22 5V15C22 16.1046 21.1046 17 20 17H4C2.89543 17 2 16.1046 2 15V5C2 3.89543 2.89543 3 4 3Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span>50 Heures</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
